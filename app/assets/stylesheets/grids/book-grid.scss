@@ -1,0 +1,19 @@
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+
+.row {
+	@include outer-container;
+	.item {
+		@include span-columns(4);
+		@include omega(3n);
+		@include clearfix;
+	}
+}
+
+.row-top {
+	@include outer-container;
+	form {
+		@include span-columns(8);
+		@include shift(2);
+	}
+}

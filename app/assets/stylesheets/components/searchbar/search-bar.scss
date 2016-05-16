@@ -1,0 +1,44 @@
+@import "../../bourbon/bourbon";
+@import "../../neat/neat";
+@import "../../base/base";
+
+form.search-bar {
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-spacing: 2.5em !default;
+  $base-border-color: #1EA896;
+  $base-line-height: 1.5em !default;
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $search-bar-border-color: $base-border-color;
+  $search-bar-border: 1px solid $search-bar-border-color;
+  $search-bar-background: lighten($search-bar-border-color, 10%);
+
+  position: relative;
+
+  input[type=search] {
+    appearance: none;
+    background-color: rgba(255,255,255,.8);
+    border: 1px solid $base-border-color;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+    padding: ($base-spacing / 2) ($base-spacing / 3);
+    position: relative;
+    transition: border-color;
+    width: 100%;
+  }
+
+  button[type=submit] {
+    @include position(absolute, 0 0 0 null);
+    outline: none;
+    padding: 5px 10px;
+
+    i {
+      height: 12px;
+      opacity: 0.7;
+      color: white;
+    }
+  }
+}
