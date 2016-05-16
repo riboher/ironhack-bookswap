@@ -3,13 +3,13 @@ class CreateBooks < ActiveRecord::Migration
     create_table :books do |t|
       t.string :title
       t.string :author
-      t.datetime :year
+      t.string :year
       t.string :isbn
       t.string :cover
       t.integer :price
       t.string :publisher
-      t.integer :reader_id
-
+      t.references :reader, index: true
+      t.boolean :is_available, default: true
       t.timestamps null: false
     end
   end

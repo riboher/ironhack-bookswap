@@ -3,14 +3,16 @@ Reader.create(first_name: 'Ricardo',
             email: 'riboher@gmail.com',
             city: 'Madrid',
             postcode: '28006',
-            password: '123456')
+            password: '123456',
+            avatar_file_name: 'https://robohash.org/profile.png?size=150x150&set=set3')
 
 Reader.create(first_name: 'Jose',
             last_name: 'Perez',
             email: 'josepe@hotmail.com',
             city: 'Madrid',
             postcode: '28004',
-            password: '123456')
+            password: '123456',
+            avatar_file_name: 'https://robohash.org/profile.png?size=150x150&set=set3')
 
 Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             author: "Boyne, John",
@@ -19,8 +21,7 @@ Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             price: 19,
             isbn: "9788498380798",
             cover: "http://www.directtextbook.com/large/8498380790.jpg",
-            reader_id: 2
-            )
+            reader_id: 2)
 
 Book.create(title: "Lucky star las lunas de jupiter",
             author: "Asimov, Isaac",
@@ -42,3 +43,4 @@ Book.create(title: "Post Office",
             reader_id: 1
             )
 
+puts "All info saved successfully"
