@@ -1,6 +1,7 @@
 class DeviseCreateReaders < ActiveRecord::Migration
   def change
     create_table :readers do |t|
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
