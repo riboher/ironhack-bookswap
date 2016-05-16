@@ -14,6 +14,7 @@ gem 'devise'
 gem 'bourbon', '~> 5.0.0.beta.5'
 gem 'neat'
 gem "paperclip", "~> 5.0.0.beta1"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'byebug'
