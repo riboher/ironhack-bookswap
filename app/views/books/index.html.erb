@@ -2,6 +2,24 @@
 	<button type="button" class="js-menu-trigger sliding-panel-button">
 	  |||
 	</button>
+	<div class="modal">
+	  <label for="modal-1">
+	    <button class="modal-trigger"><i class="fa fa-plus">Add new book</i></button>
+	  </label>
+	  <input class="modal-state" id="modal-1" type="checkbox" />
+	  <div class="modal-fade-screen">
+	    <div class="modal-inner js-isbn-modal">
+	      <div class="modal-close" for="modal-1"></div>
+	      <h1>ISBN Searcher</h1>
+	      <form class="search-bar js-create-book" role="search">
+	      	  <input type="search" class="search-isbn" placeholder="Enter ISBN" />
+	      	  <button type="submit">
+	      	    <i class="fa fa-search"></i>
+	      	  </button>
+	      	</form>
+	    </div>
+	  </div>
+	</div>
 	<form class="search-bar" role="search">
 	  <input type="search" placeholder="Enter Search" />
 	  <button type="submit">
