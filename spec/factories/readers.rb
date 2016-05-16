@@ -7,5 +7,6 @@ FactoryGirl.define do
     postcode { Faker::Address.postcode }
     email { |reader| Faker::Internet.email(reader.first_name) }
     password {Faker::Internet.password(8)}
+    avatar_file_name { Faker::Placeholdit.image("100x100") }
   end
 end
