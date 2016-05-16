@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'bourbon', '~> 5.0.0.beta.5'
 gem 'neat'
+gem "paperclip", "~> 5.0.0.beta1"
 
 group :development, :test do
   gem 'byebug'
