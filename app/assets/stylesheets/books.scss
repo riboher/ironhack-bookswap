@@ -1,3 +1,125 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$green: #1EA896;
+$red: #FF715B;
+$brown: #523F38;
+$gray: #4C5454;
+$main-font: 'Raleway', sans-serif;
+
+
+body {
+	background: #f5f5f5;
+}
+
+.sliding-panel-button {
+	margin-left: 24px;
+}
+
+.js-sticky-bar {
+	z-index: 99999 !important;
+}
+
+.item {
+	margin: 75px auto 20px;
+	background: #fff;
+	border-radius: 3px;
+	box-shadow: 0px 0px 20px rgba(0,0,0,.2);
+	.item-box {
+		position: relative;
+		&:before {
+			content: "";
+			height: 100%;
+			width: 100%;
+			background: #fff;
+			z-index: 9999;
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+		}
+		&:hover:before {
+			opacity: .7;
+		}
+
+		.item-box-actions {
+			position: relative;
+			
+			.item-price {
+				margin-top: 25px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				background: $green;
+				color: #fff;
+				padding: 12px 24px;
+				font-family: $main-font;
+				i {
+					font-weight: 600;
+					padding-left: 12px
+				}
+			}
+		}
+		.add-item {
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    position: absolute;
+		    top: 35%;
+		    bottom: 50%;
+		    left: 50%;
+		    right: 50%;
+		    opacity: 0;
+		    transform: scale(0);
+		    transition: all .3s ease-in-out;
+		    z-index: 9999;
+
+		    button {
+		    	background: $red;
+		    	transition: background .2s ease-in-out;
+		    	&:hover {
+		    		background: darken( $red,10% );
+		    	}
+		    }
+		}
+
+		.item-thumbnail {
+		    margin: 0 auto;
+		    img {
+		    	width: 100%;
+		    	border-top-left-radius: 3px;
+		    	border-top-right-radius: 3px;
+		    }
+		}
+		.item-inner-elements {
+			padding: 25px;
+
+			.item-title {
+				margin-bottom: 0;
+				color: $green;
+				font-weight: 400;
+				font-family: $main-font;
+			}
+			.item-author {
+				font-size: 10px;
+				font-style: italic;
+				font-weight: bold;
+				font-family: $main-font;
+			}
+			.item-description {
+				font-size: 15px;
+				line-height: 18px;
+				font-family: $main-font;
+			}
+		}
+	}
+}
+
+.pagination {
+
+	margin: 35px 0;
+	.current-page a {
+		background-color: $green;
+		color: #fff;
+	}
+}
