@@ -4,7 +4,7 @@ Reader.create(first_name: 'Ricardo',
             city: 'Madrid',
             postcode: '28006',
             password: '123456',
-            avatar_file_name: 'https://robohash.org/profile.png?size=150x150&set=set3')
+            avatar: 'https://robohash.org/profile.png?size=150x150&set=set3')
 
 Reader.create(first_name: 'Jose',
             last_name: 'Perez',
@@ -12,7 +12,7 @@ Reader.create(first_name: 'Jose',
             city: 'Madrid',
             postcode: '28004',
             password: '123456',
-            avatar_file_name: 'https://robohash.org/profile.png?size=150x150&set=set3')
+            avatar: 'https://robohash.org/profile.png?size=150x150&set=set3')
 
 Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             author: "Boyne, John",
