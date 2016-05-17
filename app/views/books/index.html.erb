@@ -2,21 +2,40 @@
 	<button type="button" class="js-menu-trigger sliding-panel-button">
 	  |||
 	</button>
+	<div class="dropdown">
+	  <div class="dropdown-container">
+	    <p class="dropdown-button">Add a new Book</p>
+	    <form class="search-bar js-create-book dropdown-menu dropdown-select" role="search">
+      	  <input type="search" class="search-isbn" placeholder="Enter ISBN" />
+      	  <button type="submit">
+      	    <i class="fa fa-search"></i>
+      	  </button>
+      	</form>
+	  </div>
+	</div>
 	<div class="modal">
 	  <label for="modal-1">
-	    <button class="modal-trigger"><i class="fa fa-plus">Add new book</i></button>
+	    <div class="modal-trigger"></div>
 	  </label>
 	  <input class="modal-state" id="modal-1" type="checkbox" />
 	  <div class="modal-fade-screen">
-	    <div class="modal-inner js-isbn-modal">
+	    <div class="modal-inner">
 	      <div class="modal-close" for="modal-1"></div>
-	      <h1>ISBN Searcher</h1>
-	      <form class="search-bar js-create-book" role="search">
-	      	  <input type="search" class="search-isbn" placeholder="Enter ISBN" />
-	      	  <button type="submit">
-	      	    <i class="fa fa-search"></i>
-	      	  </button>
-	      	</form>
+	      <h1>Yay! We found it! Check the info and submit your new book!</h1>
+	      <form class='js-new-book-form'>
+	      	<img src="" alt="book cover" class="cover">
+	      	<div class="book-data">
+	      		<input type="text" class="title" disabled>
+		      	<input type="text" class="author" disabled>
+		      	<input type="text" class="publisher" disabled>
+		      	<label for="price">You'll obtain</label>
+		      	<input type="text" class="price" disabled>
+		      	<input type="hidden" class="isbn" disabled>
+		      	<textarea name="description" id="" cols="20" rows="2" placeholder="Enter a description">
+		      	</textarea>
+		      	<button type="submit">Yes!</button>
+	      	</div>
+	      </form>
 	    </div>
 	  </div>
 	</div>
@@ -52,7 +71,6 @@
 				<article class="item-inner-elements">
 					<h6 class="item-title"><%= book.title %></h6>
 					<p class="item-author"><%= format_author(book.author) %></p>
-					<p class="item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique rem atque necessitatibus.</p>
 				</article>
 			</section>
 		</div>
