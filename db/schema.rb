@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160516093354) do
     t.string   "cover"
     t.integer  "price"
     t.string   "publisher"
+    t.text     "description"
     t.integer  "reader_id"
     t.boolean  "is_available", default: true
     t.datetime "created_at",                  null: false

@@ -21,6 +21,10 @@ Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             price: 19,
             isbn: "9788498380798",
             cover: "http://www.directtextbook.com/large/8498380790.jpg",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Eum a quod, voluptas doloremque magni inventore error nemo quidem
+            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
+            autem explicabo nulla quos.",
             reader_id: 2)
 
 Book.create(title: "Lucky star las lunas de jupiter",
@@ -30,6 +34,10 @@ Book.create(title: "Lucky star las lunas de jupiter",
             price: 9,
             isbn: "9788402077110",
             cover: "http://bit.ly/1R3HehX",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Eum a quod, voluptas doloremque magni inventore error nemo quidem
+            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
+            autem explicabo nulla quos.",
             reader_id: 1
             )
 
@@ -40,6 +48,10 @@ Book.create(title: "Post Office",
             price: 16,
             isbn: "9780061177576",
             cover: "http://www.directtextbook.com/large/0061177571.jpg",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Eum a quod, voluptas doloremque magni inventore error nemo quidem
+            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
+            autem explicabo nulla quos.",
             reader_id: 1
             )
 
