@@ -12,8 +12,37 @@ body {
 	background: #f5f5f5;
 }
 
-.sliding-panel-button {
+.top-bar {
+    text-align: right;
+    padding-right: 5em;
+    padding-top: 1em;
+    background: $red;
+    button {
+    	margin-top: -15px;
+    }
+}
+
+.hero-unit {
+	background: url("bg-hero.jpeg") center;
+    background-size: cover;
+	height: 350px;
+	margin-bottom: 2em;
+	.sign-buttons {
+		text-align: center;
+		margin-top: 10em;
+	}
+}
+
+.row-top {
+	margin-top: 40px;
+}
+
+button.sliding-panel-button {
 	margin-left: 24px;
+	background-color: $red;
+	&:hover, &:focus {
+		background-color: $red;
+	}
 }
 
 .js-sticky-bar {

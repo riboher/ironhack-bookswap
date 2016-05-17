@@ -1,0 +1,17 @@
+<div class="item">
+	<section class="item-box">
+		<article class="item-box-actions">
+			<a href="#" class="item-price"><%= book.price %><i class="fa fa-connectdevelop"></i></a>
+		</article>
+		<article class="item-thumbnail">
+			<%= image_tag(book.cover) %>
+		</article>
+		<article class="add-item">
+			<button><i class="fa fa-book fa-3x"></i></button>
+		</article>
+		<article class="item-inner-elements">
+			<h6 class="item-title"><%= book.title %></h6>
+			<p class="item-author"><%= format_author(book.author) %></p>
+		</article>
+	</section>
+</div>
