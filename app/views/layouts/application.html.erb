@@ -16,6 +16,7 @@
 <% if reader_signed_in? %>
 <nav class="js-menu sliding-panel-content">
   <ul>
+    <li><%= link_to 'View Available books', root_path %></li>
     <li><%= link_to 'My Profile', reader_path(current_reader.id) %></li>
     <li><a href="javascript:;">Crear libro</a></li>
 	<li><a href="javascript:;">Filtros</a></li>
