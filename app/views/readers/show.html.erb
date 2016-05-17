@@ -1,13 +1,49 @@
+<% if notice %>
+<div class="flash-notice">
+	<p><%= notice %></p>
+</div>
+<% end %>
 <div class="user-container">
 	<section class="user-panel">
+		<h1>Welcome to your profile, <%= current_reader.first_name %></h1>
 		<%= simple_form_for current_reader do |f| %>
 			<%= image_tag(current_reader.avatar) %>
-			<%= f.input :first_name, label: false, disabled: true, input_html: { value: current_reader.first_name } %>
-			<%= f.input :last_name, label: false, disabled: true, input_html: { value: current_reader.last_name } %>
-			<%= f.input :email, label: false, disabled: true, input_html: { value: current_reader.email } %>
-			<%= f.input :address, label: false, disabled: true, input_html: { value: current_reader.address } %>
-			<%= f.input :postcode, label: false, disabled: true, input_html: { value: current_reader.postcode } %>
-			<%= f.input :city, label: false, disabled: true, input_html: { value: current_reader.city } %>
+			<div class="input-group">
+				<%= f.input_field :first_name, disabled: true, class: "first_name" %>
+				<button class="edit-button" data-user="first_name">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
+			<div class="input-group">
+				<%= f.input_field :last_name,  disabled: true, class: "last_name"  %>
+				<button class="edit-button" data-user="last_name">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
+			<div class="input-group">
+				<%= f.input_field :email, disabled: true, class: "email"  %>
+				<button class="edit-button" data-user="email">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
+			<div class="input-group">
+				<%= f.input_field :address, disabled: true, class: "address"  %>
+				<button class="edit-button" data-user="address">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
+			<div class="input-group">
+				<%= f.input_field :postcode,  disabled: true, class: "postcode" %>
+				<button class="edit-button" data-user="postcode">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
+			<div class="input-group">
+				<%= f.input_field :city, disabled: true, class: "city"  %>
+				<button class="edit-button" data-user="city">
+					<i class="fa fa-pencil"></i>
+				</button>
+			</div>
 			<%= f.button :submit %> 
 		<% end %>
 	</section>
