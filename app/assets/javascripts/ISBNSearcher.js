@@ -3,8 +3,12 @@ $(function(){
 $('.js-create-book').on('submit',function(event){
 	event.preventDefault();
 	var isbn = $('.search-isbn').val();
-	getBook(isbn);
+	getBook(parseISBN(isbn));
 });
+
+	function parseISBN(isbn) {
+		return isbn.split("-").join("");
+	}
 
 	var ENDPOINT = "http://www.directtextbook.com/xml.php?key=4cf4a7b1a265e7a0710c24a1d4d72df4&isbn=";
 	
@@ -24,7 +28,7 @@ $('.js-create-book').on('submit',function(event){
 		var title = $(xml).find('title').text();
 		var author = $(xml).find('author').text();
 		var year = $(xml).find('publicationdate').text();
-		var isbn = $(xml).find('isbn').text();
+		var isbn = $(xml).find('ean').text();
 		var cover = $(xml).find('imageurl').text();
 		var publisher = $(xml).find('publisher').text();
 		var pages = $(xml).find('pages').text();
@@ -40,20 +44,17 @@ $('.js-create-book').on('submit',function(event){
 	}
 
 	function generateForm(title,isbn,author,publisher,cover,totalPrice){
-		var modal = $('.js-isbn-modal');
-		modal.empty();
-		modal.append("<h2>Is this the book you're looking for?");
-		modal.append("<form method='post' class='js-book-insertion'></form>");
-		var form = $('.js-book-insertion')
-		form.append("<div class='book-cover-thumbnail'><img src='" + cover + "'/></div>");
-		form.append("<input type='text' value='"+title+"' disabled>");
-		form.append("<input type='text' value='"+author+"' disabled>");
-		form.append("<input type='text' value='"+publisher+"' disabled>");
-		form.append("<label for='price'>You'll obtain:</label>");
-		form.append("<input type='text' name='price' value='"+totalPrice+" points' disabled>");
+		$('#modal-1').attr('checked',true);
+		var form = $('.js-new-book-form');
+		form.find('.cover').attr('src',cover);
+		form.find('.title').val(title);
+		form.find('.author').val(author);
+		form.find('.publisher').val(publisher);
+		form.find('.price').val(totalPrice + 'points');
+		form.find('.isbn').val(isbn);
 	}
 
-
+	
 
 
 
