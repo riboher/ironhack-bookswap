@@ -7,11 +7,10 @@ class Readers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  #POST /resource
-  def create
-    super
-    binding.pry
-  end
+  # POST /resource
+  # def create
+  #   super
+  # end
 
   # GET /resource/edit
   # def edit

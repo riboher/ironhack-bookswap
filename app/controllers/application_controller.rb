@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
   end
 
   def reader_attributes
-    attributes = [:first_name, :last_name, :address, :postcode, :city]
+    attributes = [:first_name, :last_name, :address, :postcode, :city, :avatar]
   end
 end
