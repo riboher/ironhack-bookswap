@@ -14,10 +14,10 @@
   $medium-screen: 40em !default;
   $large-screen: 53.75em !default;
   $base-font-color: $dark-gray !default;
-  $modal-padding: 3em;
+  $modal-padding: 1em;
   $modal-background: $base-background-color;
   $modal-close-color: $light-gray;
-  $modal-image-height: 135px;
+  $modal-image-height: 335px;
   $modal-image-width: $modal-image-height;
   $modal-trigger-image-width: 300px;
   
@@ -100,7 +100,7 @@
     width: 95%;
 
     @include media($medium-screen) {
-      max-height: 70%;
+      max-height: 90%;
       padding: $modal-padding;
       width: 60%;
     }
@@ -114,10 +114,19 @@
       text-align: left;
       text-transform: capitalize;
     }
+  
+    .js-new-book-form {
+      width: 75%;
+      margin-left: 0;
+      img {
+        width: 135px;
+        float: left;
+      }
 
-    p {
-      color: $base-font-color;
-      line-height: $base-line-height;
+      .book-data {
+        margin-left: 155px;
+        width: 100%;
+      }
     }
 
     .modal-intro {
@@ -150,7 +159,7 @@
   }
 
   .modal-state:checked + .modal-fade-screen .modal-inner {
-    top: 0.5em;
+    top: -7em;
   }
 }
 

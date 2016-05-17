@@ -6,12 +6,12 @@
   $action-color: $green;
   $dark-gray: #1EA896 ;
   $sliding-panel-border-color: $dark-gray;
-  $sliding-panel-background: lighten($sliding-panel-border-color, 5%);
+  $sliding-panel-background: darken($sliding-panel-border-color, 5%);
   $sliding-panel-color: #fff;
   $sliding-panel-border: 1px solid $sliding-panel-border-color;
   $sliding-panel-background-hover: $action-color;
   $sliding-panel-color-hover: #fff;
-  $sliding-panel-background-focus: lighten($sliding-panel-background, 5%);
+  $sliding-panel-background-focus: darken($sliding-panel-background, 5%);
 
   @include position(fixed, 0 auto 0 0);
   @include size(220px, 100%);
