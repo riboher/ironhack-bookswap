@@ -1,5 +1,8 @@
 class Book < ActiveRecord::Base
   belongs_to :reader
+  validates :title, presence: true
+  validates :isbn, length: { in: 10..13 }
+  validates :author, presence: true
 
   def self.get_available_books(current_reader)
     if current_reader != nil

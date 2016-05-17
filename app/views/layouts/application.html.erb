@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="flash-container">
+	
+</div>
+<div class="user-bar">
+	<% if reader_signed_in? %>
+		<%= link_to 'Log out', destroy_reader_session_path, method: :delete %>
+	<% end %>
+</div>
 <%= yield %>
 
 </body>
