@@ -7,7 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="top-bar">
+	<button type="button" class="js-menu-trigger sliding-panel-button">
+	  <i class="fa fa-bars fa-2x"></i>
+	</button>
+</div>
 <div class="flash-container"></div>
+<% if reader_signed_in? %>
+<nav class="js-menu sliding-panel-content">
+  <ul>
+    <li><%= link_to 'My Profile', reader_path(current_reader.id) %></li>
+    <li><a href="javascript:;">Crear libro</a></li>
+	<li><a href="javascript:;">Filtros</a></li>
+    <li>
+    	<form class="search-bar js-create-book dropdown-menu dropdown-select" role="search">
+	  	  	<input type="search" class="search-isbn" placeholder="Enter ISBN" />
+	  	  	<button type="submit">
+	  	    	<i class="fa fa-search"></i>
+	  	  	</button>
+  		</form>
+    </li>
+    <li>
+		<%= link_to 'Log out', destroy_reader_session_path, method: :delete %>
+	</li>
+  </ul>
+</nav>
+<% end %>
+<div class="js-menu-screen sliding-panel-fade-screen"></div>
 <%= yield %>
 
 </body>

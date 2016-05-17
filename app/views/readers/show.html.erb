@@ -1,0 +1,14 @@
+<div class="user-container">
+	<section class="user-panel">
+		<%= simple_form_for current_reader do |f| %>
+			<%= image_tag(current_reader.avatar) %>
+			<%= f.input :first_name, label: false, disabled: true, input_html: { value: current_reader.first_name } %>
+			<%= f.input :last_name, label: false, disabled: true, input_html: { value: current_reader.last_name } %>
+			<%= f.input :email, label: false, disabled: true, input_html: { value: current_reader.email } %>
+			<%= f.input :address, label: false, disabled: true, input_html: { value: current_reader.address } %>
+			<%= f.input :postcode, label: false, disabled: true, input_html: { value: current_reader.postcode } %>
+			<%= f.input :city, label: false, disabled: true, input_html: { value: current_reader.city } %>
+			<%= f.button :submit %> 
+		<% end %>
+	</section>
+</div>
