@@ -11,10 +11,11 @@
  * file per style scope.
  *
  */
+@import "normalize.css";
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "base/base";
 @import "components/**/*";
 @import "books.scss";
-@import "grids/book-grid.scss";
+@import "grids/**/*";
 @import "font-awesome";
