@@ -27,6 +27,11 @@ body {
     background-size: cover;
 	height: 350px;
 	margin-bottom: 2em;
+	&:before {
+		content: "";
+		background: red;
+		height: 100%;
+	}
 	.sign-buttons {
 		text-align: center;
 		margin-top: 10em;
