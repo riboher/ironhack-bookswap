@@ -1,25 +1,36 @@
 $(function(){
 	$('.js-new-book-form').on('submit',function(event){
 		event.preventDefault();
-		var title = $(this).find('.title').val();
-		var author = $(this).find('.author').val();
-		var publisher = $(this).find('.publisher').val();
-		var cover = $(this).find('.cover').attr('src');
-		var isbn = $(this).find('.isbn').val();
-		var description = $(this).find('.description').val();
-		var price = parseInt($(this).find('.price').val());
-		addBook(title,author,publisher,cover,isbn,description,price);
+		var data  = {
+			book: {}
+		}
+		data.book.title = $(this).find('.title').val();
+		data.book.author = $(this).find('.author').val();
+		data.book.publisher = $(this).find('.publisher').val();
+		data.book.year = $(this).find('.year').val();
+		data.book.cover = $(this).find('.cover').attr('src');
+		data.book.isbn = $(this).find('.isbn').val();
+		data.book.description = $(this).find('.description').val();
+		data.book.price = parseInt($(this).find('.price').val());
+		addBook(data);
 	});
 
 
-	function addBook(title,author,publisher,cover,isbn,description,price) {
+	function addBook(data) {
 		$.ajax({
 			method: 'POST',
-			url: '/books/new',
-			data: title + author + publisher + cover + isbn + description + price,
+			url: '/books/create',
+			data: data,
 			success: function(){
-				console.log("The book was created successfully");
-			}
+				var msg = "Your book has been succesffully created";
+				$('#modal-1').attr('checked',false);
+				flashNotice('success',msg);
+			},
+			error: function(){
+				var msg = "Ups! Something went wrong. The book was not saved";
+				$('#modal-1').attr('checked',false);
+				flashNotice('error',msg);
+			},
 		});
 	}
 });
