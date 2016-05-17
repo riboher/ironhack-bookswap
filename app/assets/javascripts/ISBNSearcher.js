@@ -31,7 +31,7 @@ $('.js-create-book').on('submit',function(event){
 		var isbn = $(xml).find('ean').text();
 		var cover = $(xml).find('imageurl').text();
 		var publisher = $(xml).find('publisher').text();
-		var pages = $(xml).find('pages').text();
+		// var pages = $(xml).find('pages').text();
 		var totalPrice = 0;
 		var totalItems = $(xml).find('results').text();
 		$(xml).find('item').each(function(){
@@ -40,16 +40,17 @@ $('.js-create-book').on('submit',function(event){
 			if(!isNaN(price.text())) totalPrice += parseInt(price.text());
 		});
 		var totalPrice = Math.round(totalPrice/totalItems);
-		generateForm(title,isbn,author,publisher,cover,totalPrice);
+		generateForm(title,isbn,author,year,publisher,cover,totalPrice);
 	}
 
-	function generateForm(title,isbn,author,publisher,cover,totalPrice){
+	function generateForm(title,isbn,author,year,publisher,cover,totalPrice){
 		$('#modal-1').attr('checked',true);
 		var form = $('.js-new-book-form');
 		form.find('.cover').attr('src',cover);
 		form.find('.title').val(title);
 		form.find('.author').val(author);
 		form.find('.publisher').val(publisher);
+		form.find('.year').val(year);
 		form.find('.price').val(totalPrice + 'points');
 		form.find('.isbn').val(isbn);
 	}

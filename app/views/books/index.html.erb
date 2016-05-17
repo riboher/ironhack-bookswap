@@ -3,31 +3,32 @@
 	  |||
 	</button>
 	<div class="dropdown">
-	  <div class="dropdown-container">
-	    <p class="dropdown-button">Add a new Book</p>
-	    <form class="search-bar js-create-book dropdown-menu dropdown-select" role="search">
-      	  <input type="search" class="search-isbn" placeholder="Enter ISBN" />
-      	  <button type="submit">
-      	    <i class="fa fa-search"></i>
-      	  </button>
-      	</form>
-	  </div>
+		<div class="dropdown-container">
+	    	<p class="dropdown-button">Add a new Book</p>
+	    	<form class="search-bar js-create-book dropdown-menu dropdown-select" role="search">
+      	  	<input type="search" class="search-isbn" placeholder="Enter ISBN" />
+      	  	<button type="submit">
+      	    	<i class="fa fa-search"></i>
+      	  	</button>
+      		</form>
+	  	</div>
 	</div>
 	<div class="modal">
 	  <label for="modal-1">
-	    <div class="modal-trigger"></div>
+	  <div class="modal-trigger"></div>
 	  </label>
 	  <input class="modal-state" id="modal-1" type="checkbox" />
 	  <div class="modal-fade-screen">
 	    <div class="modal-inner">
 	      <div class="modal-close" for="modal-1"></div>
 	      <h1>Yay! We found it! Check the info and submit your new book!</h1>
-	      <form class='js-new-book-form'>
+	      <form class='js-new-book-form' data-remote="true">
 	      	<img src="" alt="book cover" class="cover">
 	      	<div class="book-data">
 	      		<input type="text" class="title" disabled>
 		      	<input type="text" class="author" disabled>
 		      	<input type="text" class="publisher" disabled>
+		      	<input type="text" class="year" disabled>
 		      	<label for="price">You'll obtain</label>
 		      	<input type="text" class="price" disabled>
 		      	<input type="hidden" class="isbn" disabled>
