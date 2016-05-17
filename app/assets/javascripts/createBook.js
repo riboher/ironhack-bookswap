@@ -23,14 +23,20 @@ $(function(){
 			data: data,
 			success: function(){
 				var msg = "Your book has been succesffully created";
-				$('#modal-1').attr('checked',false);
-				flashNotice('success',msg);
+				triggerResult('success',msg);
+				
 			},
 			error: function(){
 				var msg = "Ups! Something went wrong. The book was not saved";
-				$('#modal-1').attr('checked',false);
-				flashNotice('error',msg);
+				triggerResult('error',msg);
 			},
 		});
+	}
+
+	function triggerResult(notice,msg){
+		$('.search-isbn').val("");
+		$(".js-create-book").toggleClass('show-menu');
+		$('#modal-1').attr('checked',false);
+		flashNotice(notice,msg);
 	}
 });
