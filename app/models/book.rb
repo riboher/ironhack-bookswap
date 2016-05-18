@@ -12,7 +12,7 @@ class Book < ActiveRecord::Base
     end
   end
 
-  def self.check_books_from(reader)
+  def self.get_books_from(reader)
     where(reader_id: reader.id)
   end
 end

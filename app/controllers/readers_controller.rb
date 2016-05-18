@@ -17,7 +17,9 @@ class ReadersController < ApplicationController
     reader = Reader.find_by(id: params[:id])
     respond_to do |format|
       if reader
-        books = Book.check_books_from(reader)
+        books_on_sale = Book.get_books_from(reader)
+        books_sold = Transaction.get_given_books(reader)
+        books_acquired = Transaction.get_received_books(reader)
         format.json {render json: books}
       else
         format.json { redirect_to reader_path, notice: "No user was found with that ID" }
