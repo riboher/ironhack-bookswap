@@ -11,4 +11,8 @@ class Book < ActiveRecord::Base
       all
     end
   end
+
+  def self.check_books_from(reader)
+    where(reader_id: reader.id)
+  end
 end

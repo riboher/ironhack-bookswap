@@ -20,4 +20,15 @@ RSpec.describe Book, type: :model do
       expect(Book.get_available_books(current_user).length).to eq(4)
     end
   end
+
+  describe '#get_books_from_user' do
+    it 'retrieves all the books from a specific user' do
+      current_reader = create(:reader, id: 5)
+      create(:book,reader_id: 5)
+      create(:book,reader_id: 5)
+      create(:book,reader_id: 5)
+      create(:book,reader_id: 2)
+      expect(Book.check_books_from(current_reader).length).to eq(3)
+    end
+  end
 end

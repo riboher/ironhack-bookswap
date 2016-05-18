@@ -23,7 +23,7 @@ RSpec.describe Reader, type: :model do
   end
 
   it 'has an avatar, wether it is provided by the user or not' do
-    expect(build(:reader,avatar_file_name: nil)).to_not be_valid
+    expect(build(:reader,avatar_file_name: nil)).to be_valid
   end
 
   it 'has a unique email' do

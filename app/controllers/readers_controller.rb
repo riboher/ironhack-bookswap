@@ -13,6 +13,21 @@ class ReadersController < ApplicationController
     end
   end
 
+  def owned_books
+    reader = Reader.find_by(id: params[:id])
+    respond_to do |format|
+      if reader
+        # binding.pry
+        books = Book.check_books_from(reader)
+        # binding.pry
+        format.json {render json: books}
+      else
+        format.json { redirect_to reader_path, notice: "No books were found" }
+      end
+    end
+  end
+
+
   private
   def reader_params
     params.require(:reader).permit(:first_name, :last_name, :email, :address, :postcode, :city)
