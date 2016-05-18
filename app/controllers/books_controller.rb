@@ -7,7 +7,6 @@ class BooksController < ApplicationController
 
   def create
     book = current_reader.books.create(book_params)
-
     respond_to do |format|
       if book.save
         format.html { redirect_to edit_reader_password_path , notice: "Your book was succesfully created" }

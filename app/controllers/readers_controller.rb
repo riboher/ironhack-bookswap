@@ -17,12 +17,10 @@ class ReadersController < ApplicationController
     reader = Reader.find_by(id: params[:id])
     respond_to do |format|
       if reader
-        # binding.pry
         books = Book.check_books_from(reader)
-        # binding.pry
         format.json {render json: books}
       else
-        format.json { redirect_to reader_path, notice: "No books were found" }
+        format.json { redirect_to reader_path, notice: "No user was found with that ID" }
       end
     end
   end
