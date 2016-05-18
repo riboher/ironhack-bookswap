@@ -6,49 +6,53 @@
 <div class="user-container">
 	<section class="user-panel">
 		<h1>Welcome to your profile, <%= current_reader.first_name %></h1>
+		<h6>You can edit your information by clicking on the icons</h6>
 		<%= simple_form_for current_reader do |f| %>
 			<div class="avatar-status">
 				<%= image_tag(current_reader.avatar) %>
 				<i class="fa fa-star fa-2x rating-star" aria-hidden="true"></i>
 			</div>
-			<div class="input-group">
-				<%= f.input_field :first_name, disabled: true, class: "first_name" %>
-				<button class="edit-button" data-user="first_name">
-					<i class="fa fa-pencil"></i>
-				</button>
+			<div class="input-edits">
+				<div class="input-group">
+					<%= f.input_field :first_name, disabled: true, class: "first_name" %>
+					<button class="edit-button" data-user="first_name">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group">
+					<%= f.input_field :last_name,  disabled: true, class: "last_name"  %>
+					<button class="edit-button" data-user="last_name">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group">
+					<%= f.input_field :email, disabled: true, class: "email"  %>
+					<button class="edit-button" data-user="email">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group">
+					<%= f.input_field :address, disabled: true, class: "address"  %>
+					<button class="edit-button" data-user="address">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group">
+					<%= f.input_field :postcode,  disabled: true, class: "postcode" %>
+					<button class="edit-button" data-user="postcode">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group">
+					<%= f.input_field :city, disabled: true, class: "city"  %>
+					<button class="edit-button" data-user="city">
+						<i class="fa fa-pencil"></i>
+					</button>
+				</div>
+				<div class="input-group submit-group">
+					<%= f.button :submit %> 
+				</div>
 			</div>
-			<div class="input-group">
-				<%= f.input_field :last_name,  disabled: true, class: "last_name"  %>
-				<button class="edit-button" data-user="last_name">
-					<i class="fa fa-pencil"></i>
-				</button>
-			</div>
-			<div class="input-group">
-				<%= f.input_field :email, disabled: true, class: "email"  %>
-				<button class="edit-button" data-user="email">
-					<i class="fa fa-pencil"></i>
-				</button>
-			</div>
-			<div class="input-group">
-				<%= f.input_field :address, disabled: true, class: "address"  %>
-				<button class="edit-button" data-user="address">
-					<i class="fa fa-pencil"></i>
-				</button>
-			</div>
-			<div class="input-group">
-				<%= f.input_field :postcode,  disabled: true, class: "postcode" %>
-				<button class="edit-button" data-user="postcode">
-					<i class="fa fa-pencil"></i>
-				</button>
-			</div>
-			<div class="input-group">
-				<%= f.input_field :city, disabled: true, class: "city"  %>
-				<button class="edit-button" data-user="city">
-					<i class="fa fa-pencil"></i>
-				</button>
-			</div>
-			<%= f.button :submit %> 
-			<span>You can edit your information by clicking on the green button</span>
 		<% end %>
 	</section>
 	<section class="button-filters js-book-filters">

@@ -10,6 +10,12 @@
 		font-size: 2em;
 		margin-bottom: 1em;
 	}
+
+	h6 {
+		font-size: 13px;
+		text-align: center;
+		color: $gray;
+	}
 	.avatar-status {
 		float: left;
 		position: relative;
@@ -26,6 +32,9 @@
 	abbr {
 		display: none;
 	}
+	.input-edits {
+		float: right;
+	}
 	.input-group {
 		position: relative;
 		.edit-button {
@@ -35,8 +44,9 @@
 		    top: 1px;
 		}
 	}
-	span {
-		font-size: 13px;
+	.submit-group {
+		text-align: center;
+		margin-top: 15px;
 	}
 }
 
