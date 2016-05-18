@@ -9,7 +9,7 @@ class Book < ActiveRecord::Base
     if current_reader != nil
       all.where.not(reader_id: current_reader.id).where(is_available: true)
     else
-      all
+      all.where(is_available: true)
     end
   end
 
