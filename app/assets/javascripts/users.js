@@ -5,19 +5,22 @@ $(document).on('page:change',function(){
 		$('.'+attribute).prop('disabled',false);
 	});
 
+	retrieveAllBooks();
+
+
 	var filters = $('.js-book-filters').find('input[type="radio"]');
 	filters.on('click',function(){
 		$('.js-append-books').empty();
 		var action = $(this).val();
-		callBooks(action);
+		console.log(action);
 	});
 
 
-	function callBooks(action){
+	function retrieveAllBooks(){
 		var baseUrl = window.location.href;
 		$.ajax({
 			method: 'get',
-			url: baseUrl + "/" + action,
+			url: baseUrl + "/mybooks",
 			success: getBooks,
 			error: function(){
 				var msg= "We didn't find any books with that request. Please try again later";
@@ -26,14 +29,13 @@ $(document).on('page:change',function(){
 		});
 	}
 
-	function getBooks(books){
-		books.forEach(function(book){
-			var book = parseBook(book.title,book.author,book.cover,book.price);
-			$('.js-append-books').append(book);
+	function getBooks(response){
+		Object.keys(response.books).forEach(function(key,index){
+			console.log(response.books[key])
 		});
 	}
 
-	function parseBook(title,author,cover,price) {
+	function bookToHTML(title,author,cover,price){
 		return '<div class="item">'+
 					'<section class="item-box">'+
 						'<article class="item-box-actions">'+
