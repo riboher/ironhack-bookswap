@@ -10,8 +10,18 @@
 		font-size: 2em;
 		margin-bottom: 1em;
 	}
-	img {
+	.avatar-status {
 		float: left;
+		position: relative;
+		border: 2px solid #1EA896;
+	    border-radius: 14px;
+	    box-shadow: 0px 2px 9px rgba(0,0,0,.4);
+		.rating-star {
+			position: absolute;
+		    bottom: -11%;
+		    left: 42%;
+		    color: #F3DC15;
+		}
 	}
 	abbr {
 		display: none;
@@ -25,4 +35,11 @@
 		    top: 1px;
 		}
 	}
+	span {
+		font-size: 13px;
+	}
+}
+
+.button-filters {
+	margin-top: 50px;
 }

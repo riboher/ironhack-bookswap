@@ -7,7 +7,10 @@
 	<section class="user-panel">
 		<h1>Welcome to your profile, <%= current_reader.first_name %></h1>
 		<%= simple_form_for current_reader do |f| %>
-			<%= image_tag(current_reader.avatar) %>
+			<div class="avatar-status">
+				<%= image_tag(current_reader.avatar) %>
+				<i class="fa fa-star fa-2x rating-star" aria-hidden="true"></i>
+			</div>
 			<div class="input-group">
 				<%= f.input_field :first_name, disabled: true, class: "first_name" %>
 				<button class="edit-button" data-user="first_name">

@@ -6,8 +6,12 @@
 	form {
 		@include span-columns(6);
 		@include shift(3);
-		img {
+		.avatar-status {
 			@include shift(-4);
 		}
+	}
+	.button-filters {
+		@include span-columns(6);
+		@include shift(4);
 	}
 }
