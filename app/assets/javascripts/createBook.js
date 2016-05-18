@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('page:change',function(){
 	$('.js-new-book-form').on('submit',function(event){
 		event.preventDefault();
 		var data  = {
