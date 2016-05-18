@@ -63,7 +63,7 @@ Book.create(title: "Los Relatos 4 (Spanish Edition)",
             year: "2014",
             price: 8,
             isbn: "9788420601281",
-            cover: "http://www.directtextbook.com/large/8420601284.jpg",
+            cover: "http://www.directtextbook.com/large/9788420601281.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Eum a quod, voluptas doloremque magni inventore error nemo quidem
             optio consectetur ullam, maxime assumenda sapiente numquam mollitia
