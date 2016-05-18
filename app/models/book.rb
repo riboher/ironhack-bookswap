@@ -14,6 +14,6 @@ class Book < ActiveRecord::Base
   end
 
   def self.get_books_from(reader)
-    where(reader_id: reader.id)
+    where(reader_id: reader.id).where(is_available: true)
   end
 end

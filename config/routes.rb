@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root :to => 'books#index'
 
-  get '/readers/:id/owned_books' => "readers#owned_books"
+  get '/readers/:id/mybooks' => "readers#get_user_books"
   post '/books/create' => "books#create"
 end
