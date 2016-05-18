@@ -48,6 +48,23 @@
 				</button>
 			</div>
 			<%= f.button :submit %> 
+			<span>You can edit your information by clicking on the green button</span>
 		<% end %>
+	</section>
+	<section class="button-filters js-book-filters">
+		<div class="button-group">
+		  <label>
+		    <input type="radio" name="button-group" value="owned_books" checked>
+		    <span class="button-group-item">Owned</span>
+		  </label>
+		  <label>
+		    <input type="radio" name="button-group" value="given_books">
+		    <span class="button-group-item">Swapped - Given</span>
+		  </label>
+		  <label>
+		    <input type="radio" name="button-group" value="received_books">
+		    <span class="button-group-item">Swapped - Received</span>
+		  </label>
+		</div>
 	</section>
 </div>
