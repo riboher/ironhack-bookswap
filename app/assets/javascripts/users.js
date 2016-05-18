@@ -8,12 +8,7 @@ $(document).on('page:change',function(){
 	retrieveAllBooks();
 
 
-	var filters = $('.js-book-filters').find('input[type="radio"]');
-	filters.on('click',function(){
-		$('.js-append-books').empty();
-		var action = $(this).val();
-		console.log(action);
-	});
+	
 
 
 	function retrieveAllBooks(){
@@ -23,16 +18,24 @@ $(document).on('page:change',function(){
 			url: baseUrl + "/mybooks",
 			success: getBooks,
 			error: function(){
-				var msg= "We didn't find any books with that request. Please try again later";
-				flashNotice('error',msg);
+				
 			}
 		});
 	}
 
 	function getBooks(response){
-		Object.keys(response.books).forEach(function(key,index){
-			console.log(response.books[key])
+		response.books['on_sale'].forEach(function(item){
+			$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
+		});	
+		var filters = $('.js-book-filters').find('input[type="radio"]');
+		filters.on('click',function(){
+			$('.js-append-books').empty();
+			var action = $(this).val();
+			response.books[action].forEach(function(item){
+				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
+			});	
 		});
+		
 	}
 
 	function bookToHTML(title,author,cover,price){
