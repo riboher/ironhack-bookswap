@@ -18,7 +18,6 @@
   <ul>
     <li><%= link_to 'View Available books', root_path %></li>
     <li><%= link_to 'My Profile', reader_path(current_reader.id) %></li>
-    <li><a href="javascript:;">Crear libro</a></li>
 	<li><a href="javascript:;">Filtros</a></li>
     <li>
     	<form class="search-bar js-create-book dropdown-menu dropdown-select" role="search">
@@ -33,8 +32,8 @@
 	</li>
   </ul>
 </nav>
-<% end %>
 <div class="js-menu-screen sliding-panel-fade-screen"></div>
+<% end %>
 <%= yield %>
 
 </body>
