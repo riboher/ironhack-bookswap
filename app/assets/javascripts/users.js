@@ -2,14 +2,14 @@ $(document).on('page:change',function(){
 	$('.edit-button').on('click',function(event){
 		event.preventDefault();
 		var attribute = $(this).data('user');
-		$('.'+attribute).prop('disabled',false);
+		if ($('.' + attribute).prop('disabled')){
+			$('.' + attribute).prop('disabled',false);
+		}else {
+			$('.' + attribute).prop('disabled',true);
+		}
 	});
 
 	retrieveAllBooks();
-
-
-	
-
 
 	function retrieveAllBooks(){
 		var baseUrl = window.location.href;
@@ -18,7 +18,6 @@ $(document).on('page:change',function(){
 			url: baseUrl + "/mybooks",
 			success: getBooks,
 			error: function(){
-				
 			}
 		});
 	}
@@ -35,7 +34,6 @@ $(document).on('page:change',function(){
 				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
 			});	
 		});
-		
 	}
 
 	function bookToHTML(title,author,cover,price){
