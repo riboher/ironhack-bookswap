@@ -8,4 +8,5 @@ class Reader < ActiveRecord::Base
   validates :first_name, presence: true
   validates :postcode, presence: true
   has_many :books
+  has_many :transactions
 end

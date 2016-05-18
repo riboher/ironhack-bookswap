@@ -55,4 +55,6 @@ Book.create(title: "Post Office",
             reader_id: 1
             )
 
+Transaction.create(book_id: 3, buyer_id: 1, seller_id: 2)
+
 puts "All info saved successfully"

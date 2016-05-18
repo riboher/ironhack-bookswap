@@ -1,5 +1,6 @@
 class Book < ActiveRecord::Base
   belongs_to :reader
+  has_many :transactions
   validates :title, presence: true
   validates :isbn, length: { in: 10..13 }
   validates :author, presence: true
