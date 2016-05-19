@@ -9,4 +9,8 @@ class Reader < ActiveRecord::Base
   validates :postcode, presence: true
   has_many :books
   has_many :transactions
+
+  def has_credit?(book)
+    self.credit > book.price
+  end
 end

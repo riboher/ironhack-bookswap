@@ -13,10 +13,6 @@ module BooksHelper
   end
 
   def compare_credit(price,credit)
-    button = "enabled"
-    if price > credit
-      button = "disabled"
-    end
-    button
+    price > credit ? true : false
   end
 end

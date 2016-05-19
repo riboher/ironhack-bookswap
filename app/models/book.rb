@@ -16,4 +16,12 @@ class Book < ActiveRecord::Base
   def self.get_books_from(reader)
     where(reader_id: reader.id).where(is_available: true)
   end
+
+  def has_ownership?(owner)
+    self.reader_id == owner.id
+  end
+
+  def change_ownership(reader)
+    self.update_attribute(:reader_id, reader.id)
+  end
 end
