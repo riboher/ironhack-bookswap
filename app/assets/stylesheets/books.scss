@@ -5,15 +5,21 @@ $green: #1EA896;
 $red: #FF715B;
 $brown: #523F38;
 $gray: #4C5454;
-$main-font: 'Raleway', sans-serif;
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 
 body {
 	background: #f5f5f5;
 }
 
-body * {
-	font-family: $main-font;
+form.search-bar input.search-isbn[type="search"] {
+	padding: 5px 0 5px 10px;
 }
 
 .top-bar {
@@ -38,50 +44,67 @@ body * {
     		padding: 2em;
 		}
 	}
-}
-
-.row-top {
-	margin-top: 40px;
-}
-
-button.sliding-panel-button {
-	margin-left: 24px;
-	background-color: $red;
-	&:hover, &:focus {
-		background-color: $red;
+	.row-top {
+		@include vertical-align();
 	}
 }
 
-.js-sticky-bar {
-	z-index: 99999 !important;
+.title {
+	text-align: center;
+	color: $green;
+	h1 {
+		font-size: 2em;
+	}
+	h3 {
+		font-size: .8em;
+	}
 }
 
-.item {
-	margin: 75px auto 20px;
-	background: #fff;
-	border-radius: 3px;
-	box-shadow: 0px 0px 20px rgba(0,0,0,.2);
-	.item-box {
-		position: relative;
-		&:before {
-			content: "";
-			height: 100%;
-			width: 100%;
-			background: #fff;
-			z-index: 9999;
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-		}
-		&:hover:before {
-			opacity: .7;
-		}
+.book {
+	margin: 25px auto 20px;
+	backface-visibility: hidden;
 
-		.item-box-actions {
+	.back .book-box {
+		text-align: center;
+		background-color: #fff;
+		.swap:before {
+			font-family: fontAwesome;
+			content: "\f021";
+			vertical-align: middle;
+			font-size: 18px;
+			margin-right: 8px;
+		}
+	}
+
+	.front {
+		.book-box{
+			&:before {
+				content: "";
+				height: 100%;
+				width: 100%;
+				background: #fff;
+				z-index: 9999;
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+			}
+			&:hover:before {
+				opacity: .7;
+			}
+		}
+	}
+
+	.book-box {
+		position: relative;
+		background: #fff;
+		border-radius: 3px;
+		box-shadow: 0px 0px 20px rgba(0,0,0,.2);
+
+		.book-box-actions {
 			position: relative;
 			
-			.item-price {
+			.book-price {
 				margin-top: 25px;
 				position: absolute;
 				top: 0;
@@ -89,14 +112,16 @@ button.sliding-panel-button {
 				background: $green;
 				color: #fff;
 				padding: 12px 24px;
-				font-family: $main-font;
 				i {
 					font-weight: 600;
 					padding-left: 12px
 				}
+				&.hidden {
+					display: none;
+				}
 			}
 		}
-		.add-item {
+		.show-info {
 			display: flex;
 		    align-items: center;
 		    justify-content: center;
@@ -119,7 +144,7 @@ button.sliding-panel-button {
 		    }
 		}
 
-		.item-thumbnail {
+		.book-thumbnail {
 		    margin: 0 auto;
 		    img {
 		    	width: 100%;
@@ -127,35 +152,23 @@ button.sliding-panel-button {
 		    	border-top-right-radius: 3px;
 		    }
 		}
-		.item-inner-elements {
+		.book-inner-elements {
 			padding: 25px;
 
-			.item-title {
+			.book-title {
 				margin-bottom: 0;
 				color: $green;
 				font-weight: 400;
-				font-family: $main-font;
 			}
-			.item-author {
+			.book-author {
 				font-size: 10px;
 				font-style: italic;
 				font-weight: bold;
-				font-family: $main-font;
 			}
-			.item-description {
+			.book-description {
 				font-size: 15px;
 				line-height: 18px;
-				font-family: $main-font;
 			}
 		}
-	}
-}
-
-.pagination {
-
-	margin: 35px 0;
-	.current-page a {
-		background-color: $green;
-		color: #fff;
 	}
 }

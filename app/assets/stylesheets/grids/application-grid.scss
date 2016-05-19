@@ -6,8 +6,11 @@
 	.add-book-menu {
 		@include span-columns(3);
 	}
-	li:not(.inside-dropdown) {
+	li {
 		display: inline;
-		padding-left: 5px;
+		padding-left: 50px;
+	}
+	li:not(.add-book-menu){
+		margin-top: 0;
 	}
 }

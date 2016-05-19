@@ -61,19 +61,21 @@ $(document).on('page:change',function(){
 	}
 
 	function bookToHTML(title,author,cover,price){
-		return '<div class="item">'+
-					'<section class="item-box">'+
-						'<article class="item-box-actions">'+
-							'<a href="#" class="item-price">'+price+'<i class="fa fa-connectdevelop"></i></a>'+
-						'</article>'+
-						'<article class="item-thumbnail">'+
-							'<img src='+cover+'>'+
-						'</article>'+
-						'<article class="item-inner-elements">'+
-							'<h6 class="item-title">'+title+'</h6>'+
-							'<p class="item-author">'+author+'</p>'+
-						'</article>'+
-					'</section>'+
+		return '<div class="book">'+
+					'<div class="front">'+
+						'<section class="book-box">'+
+							'<article class="book-box-actions">'+
+								'<a href="#" class="book-price">'+price+'<i class="fa fa-connectdevelop"></i></a>'+
+							'</article>'+
+							'<article class="book-thumbnail">'+
+								'<img src='+cover+'>'+
+							'</article>'+
+							'<article class="book-inner-elements">'+
+								'<h6 class="book-title">'+title+'</h6>'+
+								'<p class="book-author">'+author+'</p>'+
+							'</article>'+
+						'</section>'+
+					'</div>'+
 				'</div>';
 	}
 });

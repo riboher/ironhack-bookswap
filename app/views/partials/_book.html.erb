@@ -1,17 +1,51 @@
-<div class="item">
-	<section class="item-box">
-		<article class="item-box-actions">
-			<a href="#" class="item-price"><%= book.price %><i class="fa fa-connectdevelop"></i></a>
-		</article>
-		<article class="item-thumbnail">
-			<%= image_tag(book.cover) %>
-		</article>
-		<article class="add-item">
-			<button><i class="fa fa-book fa-3x"></i></button>
-		</article>
-		<article class="item-inner-elements">
-			<h6 class="item-title"><%= book.title %></h6>
-			<p class="item-author"><%= format_author(book.author) %></p>
-		</article>
-	</section>
+<div class="book">
+	<div class="front">
+		<section class="book-box">
+			<article class="book-box-actions">
+				<a href="#" class="book-price"><%= book.price %><i class="fa fa-connectdevelop"></i></a>
+			</article>
+			<article class="book-thumbnail">
+				<%= image_tag(book.cover) %>
+			</article>
+			<article class="show-info">
+				<button><i class="fa fa-book fa-3x"></i></button>
+			</article>
+			<article class="book-inner-elements">
+				<h6 class="book-title"><%= book.title %></h6>
+				<p class="book-author"><%= format_author(book.author) %></p>
+			</article>
+		</section>
+	</div>
+	<div class="back">
+		<section class="book-box">
+			<% if reader_signed_in? %>
+				<article class="book-owner">
+					<p>This books belongs to:</p>
+					<%= image_tag(book.reader.avatar, size: '100x100') %>
+					<p class="book-owner-name"><%= format_owner_name(book.reader.first_name,book.reader.last_name)%></p>
+				</article>
+				<article class="swap-book">
+					<button <%= compare_credit(book.price,current_reader.credit) %>>
+						<span class="swap">Swap it!</span>
+					</button>
+					<h6><%= book.price %> points</h6>
+				</article>
+				<article class="book-box-actions">
+					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-connectdevelop"></i></a>
+				</article>
+			<% else %>
+				<h4>You're not logged in, are you?</h4>
+				<article>
+					<div>
+						<p>You don't have an account?</p>
+						<button class="sign">Sign in</button>
+					</div>
+					<div>
+						<p>Already a member?</p>
+						<button class="log">Log in</button>
+					</div>
+				</article>
+			<% end %>
+		</section>
+	</div>
 </div>
