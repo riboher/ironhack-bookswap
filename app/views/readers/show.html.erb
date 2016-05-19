@@ -3,6 +3,13 @@
 	<p><%= notice %></p>
 </div>
 <% end %>
+<div class="purchase-info">
+	<% if @book %>
+		<%= image_tag(@book.cover) %>
+		<p><%= @book.title %></p>
+		<p><%= @book.author %></p>
+	<% end %>
+</div>
 <div class="user-container">
 	<section class="user-panel">
 		<h1>Welcome to your profile, <%= current_reader.first_name %></h1>
