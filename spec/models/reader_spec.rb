@@ -35,11 +35,11 @@ RSpec.describe Reader, type: :model do
     expect(build(:reader).credit).to eq(15)
   end
 
-  pending 'reduces its credit by the value of the book' do
-    buyer = create(:reader, credit: 45)
-    seller = create(:reader, credit: 70)
-    book = create(:book, price: 20, reader_id: seller.id)
-    buyer.swap_book(book)
-    expect(buyer.credit).to eq(25)
+  describe '#has_credit?' do
+    it 'returns true when the reader has credit enough' do
+      reader = create(:reader, credit: 18)
+      book = create(:book, price: 15)
+      expect(reader.has_credit?(book)).to eq true
+    end
   end
 end
