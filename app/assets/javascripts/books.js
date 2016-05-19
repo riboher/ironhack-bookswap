@@ -99,10 +99,6 @@ $(document).on('page:change',function(){
 		flashNotice(notice,msg);
 	}
 
-	//BOOK SWAPPING
-
-	
-
 	$('.book-box').mouseenter(function(){
       $(this).find('.add-book').css('opacity',1);
       $(this).find('.add-book').css('transform','scale(1)');

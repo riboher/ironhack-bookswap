@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/readers/:id/mybooks' => "readers#get_user_books"
   post '/books/create' => "books#create"
+  post '/transactions/:book_id/swap' => "transactions#swap_book", as: "swap_book"
 end
