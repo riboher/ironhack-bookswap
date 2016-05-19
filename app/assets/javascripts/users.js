@@ -1,4 +1,26 @@
 $(document).on('page:change',function(){
+
+	//USER LOGIN METHODS
+
+	var signInButton = $('.sign');
+	var logInButton = $('.log');
+
+	signInButton.on('click',function(){
+		showLogForm('signup');
+		console.log("HOLA")
+	});
+
+	logInButton.on('click',function(){
+		showLogForm('login');
+		console.log("HOLA")
+	});
+
+	function showLogForm(method){
+		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
+	}
+
+	//USER INFO EDITION
+
 	$('.edit-button').on('click',function(event){
 		event.preventDefault();
 		var attribute = $(this).data('user');
@@ -8,6 +30,8 @@ $(document).on('page:change',function(){
 			$('.' + attribute).prop('disabled',true);
 		}
 	});
+
+	//USER BOOKS FILTERING
 
 	retrieveAllBooks();
 
