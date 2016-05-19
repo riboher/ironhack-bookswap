@@ -18,11 +18,10 @@ body * {
 
 .top-bar {
     text-align: right;
-    padding-right: 5em;
-    padding-top: 1em;
-    background: $red;
-    button {
-    	margin-top: -15px;
+    background: $green;
+    padding: 10px 5em 10px 0;
+    a, span {
+    	color: #fff;
     }
 }
 

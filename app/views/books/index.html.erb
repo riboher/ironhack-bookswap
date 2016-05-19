@@ -26,36 +26,6 @@
 	<%= render partial: 'partials/book', collection: @selling_books, as: :book %>
 </div>
 
-
-<!-- MODAL FORM FOR VIEW BOOK DATA  -->
-<div class="modal">
-	  <label for="modal-1">
-	  <div class="modal-trigger"></div>
-	  </label>
-	  <input class="modal-state" id="modal-1" type="checkbox" />
-	  <div class="modal-fade-screen">
-	    <div class="modal-inner">
-	      <div class="modal-close" for="modal-1"></div>
-	      <h1>Yay! We found it! Check the info and submit your new book!</h1>
-	      <form class='js-new-book-form' data-remote="true">
-	      	<img src="" alt="book cover" class="cover">
-	      	<div class="book-data">
-	      		<input type="text" class="title" disabled>
-		      	<input type="text" class="author" disabled>
-		      	<input type="text" class="publisher" disabled>
-		      	<input type="text" class="year" disabled>
-		      	<label for="price">You'll obtain</label>
-		      	<input type="text" class="price" disabled>
-		      	<input type="hidden" class="isbn" disabled>
-		      	<textarea name="description" id="" cols="20" rows="2" placeholder="Enter a description">
-		      	</textarea>
-		      	<button type="submit">Yes!</button>
-	      	</div>
-	      </form>
-	    </div>
-	  </div>
-	</div>
-
 <!-- MODAL FORM FOR SIGNING IN -->
 <div class="modal js-login-form">
   <label for="modal-1">

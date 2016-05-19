@@ -1,0 +1,13 @@
+@import "../bourbon/bourbon";
+@import "../neat/neat";
+
+.menu {
+	@include outer-container;
+	.add-book-menu {
+		@include span-columns(3);
+	}
+	li:not(.inside-dropdown) {
+		display: inline;
+		padding-left: 5px;
+	}
+}

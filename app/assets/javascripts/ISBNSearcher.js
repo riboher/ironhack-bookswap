@@ -3,6 +3,7 @@ $(document).on('page:change',function(){
 $('.js-create-book').on('submit',function(event){
 	event.preventDefault();
 	var isbn = $('.search-isbn').val();
+	debugger;
 	getBook(parseISBN(isbn));
 });
 
@@ -25,6 +26,7 @@ $('.js-create-book').on('submit',function(event){
 	}
 
 	function parseXML(xml){
+		console.log(xml);
 		var title = $(xml).find('title').text();
 		var author = $(xml).find('author').text();
 		var year = $(xml).find('publicationdate').text();

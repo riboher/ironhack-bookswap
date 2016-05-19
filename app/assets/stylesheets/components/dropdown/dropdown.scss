@@ -1,6 +1,4 @@
 .dropdown {
-  @include span-columns(2);
-  @include shift(1);
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
   $base-line-height: 1.5em !default;
@@ -20,6 +18,8 @@
   $dropdown-arrow-top-distance: 0;
 
   line-height: $base-line-height;
+  display: inline;
+  margin-right: 50px;
   .dropdown-container {
     display: inline-block;
     position: relative;
@@ -27,7 +27,7 @@
   }
 
   .dropdown-description {
-    background: $dropdown-background;
+    background: transparent;
     border-bottom: $dropdown-border;
     border-bottom-left-radius: $base-border-radius;
     border-left: $dropdown-border;
@@ -46,40 +46,32 @@
   }
 
   .dropdown-button {
-    background: $dropdown-background;
-    border-bottom: $dropdown-border;
-    border-bottom-right-radius: $base-border-radius;
-    border-right: $dropdown-border;
-    border-top: $dropdown-border;
-    border-left: $dropdown-border;
-    border-top-right-radius: $base-border-radius;
-    border-top-left-radius: $base-border-radius;
-    border-bottom-left-radius: $base-border-radius;
+    background: transparent;
+    // border-bottom: $dropdown-border;
+    // border-bottom-right-radius: $base-border-radius;
+    // border-right: $dropdown-border;
+    // border-top: $dropdown-border;
+    // border-left: $dropdown-border;
+    // border-top-right-radius: $base-border-radius;
+    // border-top-left-radius: $base-border-radius;
+    // border-bottom-left-radius: $base-border-radius;
     cursor: pointer;
-    float: right;
-    font-size: 0.7em;
-    line-height: $dropdown-height;
-    margin: 0;
-    padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
+    //padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
     position: relative;
-
-    @include media($large-screen) {
-      font-size: 1em;
-      padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
-    }
+    color: #fff;
   }
 
   .dropdown-button:hover {
-    background-color: $dropdown-background-hover;
+    background-color: transparent;
   }
 
   .dropdown-button::after {
-    color: $base-font-color;
-    content: "\25BE";
-    display: block;
-    position: absolute;
-    right: $dropdown-padding;
-    top: $dropdown-arrow-top-distance;
+    // color: $base-font-color;
+    // content: "\25BE";
+    // display: block;
+    // position: absolute;
+    // right: $dropdown-padding;
+    // top: $dropdown-arrow-top-distance;
   }
 
   .dropdown-menu {
