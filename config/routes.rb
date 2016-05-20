@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :readers, path: '/'
+  devise_for :readers, path: "/"
   resources :readers
 
   root :to => 'books#index'

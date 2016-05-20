@@ -1,19 +1,4 @@
-<% if !reader_signed_in? %>
-<section class="hero-unit">
-	<div class="buttons-container">
-		<article class="sign-buttons">
-			<div>
-				<p>You don't have an account?</p>
-				<button class="sign">Sign in</button>
-			</div>
-			<div>
-				<p>Already a member?</p>
-				<button class="log">Log in</button>
-			</div>
-		</article>
-	</div>
-</section>
-<% else %>
+
 <section class="hero-unit">
   <div class="row-top">
     <form class="search-bar" role="search">
@@ -24,7 +9,6 @@
     </form>
   </div>
 </section>
-<% end %>
 <div class="title">
   <% if reader_signed_in? %>
     <h1>These books are readily available for you</h1>
@@ -47,7 +31,7 @@
   <div class="modal-fade-screen">
     <div class="modal-inner">
       <div class="modal-close" for="modal-1"></div>
-      <%= render 'devise/sessions/new' %>
+      <%= render 'readers/sessions/new' %>
     </div>
   </div>
 </div>

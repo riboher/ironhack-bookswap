@@ -7,12 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if reader_signed_in? %>
 <nav class="top-bar">
 <ul class="menu">
+	<% if !reader_signed_in? %>
+		<li>
+			<button class="sign">Sign in</button>
+		</li>
+		<li>
+			<button class="log">Log in</button>
+		</li>
+	<% end %>
 	<li>
 		<%= link_to 'Browse books', root_path %>
 	</li>
+	<% if reader_signed_in? %>
 	<li class="add-book-menu">
 		<form class="search-bar js-create-book" role="search">
 		  	<input type="search" class="search-isbn" placeholder="Enter ISBN" />
@@ -26,9 +34,9 @@
 	<li>
 		<%= link_to 'Log out', destroy_reader_session_path, method: 'delete' %>
 	</li>
+	<% end %>
 </ul>
 </nav>
-<% end %>
 <div class="flash-container"></div>
 <%= yield %>
 <!-- MODAL FORM FOR VIEW BOOK DATA  -->
