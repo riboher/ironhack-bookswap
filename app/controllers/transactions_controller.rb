@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
       respond_to do |format|
         if transaction.save
           session[:transaction_id] = transaction.id
-          format.html { redirect_to reader_path(current_reader.id) }
+          format.html { redirect_to reader_path(current_reader.id), notice: "" }
         else
           format.html { redirect_to root_path, notice: "The purchase was not completed" }
         end
