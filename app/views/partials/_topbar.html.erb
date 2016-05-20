@@ -1,11 +1,11 @@
-<nav class="top-bar">
+<nav class="top-bar js-access-buttons">
 <ul class="menu">
 	<% if !reader_signed_in? %>
 		<li>
-			<button class="sign js-access-button" data-session="signup">Sign in</button>
+			<button class="sign" data-session="signup">Sign in</button>
 		</li>
 		<li>
-			<button class="log js-access-button" data-session="login">Log in</button>
+			<button class="log" data-session="login">Log in</button>
 		</li>
 	<% end %>
 	<li>

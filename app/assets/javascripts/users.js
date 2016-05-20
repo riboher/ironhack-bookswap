@@ -1,14 +1,23 @@
 $(document).on('page:change',function(){
 
 	//USER LOGIN METHODS
+	var accessButtons = document.getElementsByClassName('js-access-buttons');
 
-	var logButton = document.getElementsByClassName('js-access-button');
-
-	for (var i = 0; i < logButton.length; i++){
-		logButton[i].addEventListener('click',function(){
-			showLogForm(this.getAttribute('data-session'));
-		});
+	for (var i = 0; i < accessButtons.length; i++){
+		accessButtons[i].onclick = function(e){
+			if(e.target.getAttribute('data-session') != null){
+				showLogForm(e.target.getAttribute('data-session'));
+			}
+		}
 	}
+
+	// var logButton = document.getElementsByClassName('js-access-button');
+
+	// for (var i = 0; i < logButton.length; i++){
+	// 	logButton[i].addEventListener('click',function(){
+	// 		showLogForm(this.getAttribute('data-session'));
+	// 	});
+	// }
 
 	function showLogForm(method){
 		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
