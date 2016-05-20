@@ -1,7 +1,5 @@
 $(document).on('page:change',function(){
-
 	//API BOOK REQUEST
-
 	$('.js-create-book').on('submit',function(event){
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
@@ -114,8 +112,10 @@ $(document).on('page:change',function(){
     		$(self).find('.book-price').toggleClass('hidden');
     	},150);
     });
+    
+	$(".book").flip({
+	  	trigger: 'click',
+	  	forceHeight: true
+	});
 
-    $(".book").flip({
-      trigger: 'click'
-    });
 });

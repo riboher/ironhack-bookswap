@@ -46,4 +46,12 @@ RSpec.describe Book, type: :model do
       expect(book.reader_id).to eq(16)
     end
   end
+
+  describe '#get_book_by_title' do
+    it 'should retrieve a single book if found' do
+      book = create(:book)
+      keyword = book.title
+      expect(Book.get_book_by_title(keyword)).to eq(book)
+    end
+  end
 end

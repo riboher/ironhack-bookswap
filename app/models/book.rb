@@ -24,4 +24,8 @@ class Book < ActiveRecord::Base
   def change_ownership(reader)
     self.update_attribute(:reader_id, reader.id)
   end
+
+  def self.get_book_by_title(keyword)
+    find_by(title: keyword)
+  end
 end

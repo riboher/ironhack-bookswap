@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_reader!, except: :index
+  before_action :authenticate_reader!, only: :create
   def index
     @selling_books = Book.get_available_books(current_reader)
     @reader = Reader.new
@@ -19,6 +19,15 @@ class BooksController < ApplicationController
   def book_query
     keyword = params[:query].capitalize
     @books = Book.where("title LIKE ?","%#{keyword}%")
+  end
+
+  def book_search
+    book_title = params[:title]
+    @book = Book.get_book_by_title(book_title)
+    respond_to do |format|
+      format.html { render partial: 'partials/book', :locals  => { :book => @book } }
+      format.json { render json: @book }
+    end
   end
 
   private
