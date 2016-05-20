@@ -16,6 +16,8 @@ class ReadersController < ApplicationController
         if current_reader.update(reader_params)
           format.html { redirect_to reader_path , notice: "Your info was succesfully updated" }
         else
+          current_reader.valid?
+          @errors = current_reader.errors.messages
           format.html { redirect_to reader_path , notice: "Something went wrong. It wasn't possible to update your info"}
         end
       end

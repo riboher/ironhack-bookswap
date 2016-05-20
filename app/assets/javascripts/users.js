@@ -21,10 +21,10 @@ $(document).on('page:change',function(){
 		var attrClass = $('.' + attribute);
 		if (attrClass.prop('disabled') && attribute != 'price'){
 			attrClass.prop('disabled',false);
-			attrClass.css('color','#119966');
+			attrClass.css('border-color','#119966');
 		}else {
 			attrClass.prop('disabled',true);
-			attrClass.css('color','#4C5454');
+			attrClass.css('border-color','#ddd');
 		}
 	});
 

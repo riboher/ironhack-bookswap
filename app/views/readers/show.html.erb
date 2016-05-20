@@ -1,8 +1,6 @@
-<% if notice %>
 <% if @book %>
 	<div class="flash-notice">
 		<section class="purchase-container">
-			
 				<%= image_tag(@book.cover) %>
 				<article class="purchase-info">
 					<h3>Congratulations <%= current_reader.first_name %>! This is your Bookswap number <%= get_bookswap_count(current_reader) %>! Keep going! Take a look to the book below: </h3>
@@ -12,7 +10,6 @@
 		</section>
 	</div>
 <% end %>
-<% end %>
 <div class="user-container">
 	<section class="user-panel">
 		<h1>Welcome to your profile, <%= current_reader.first_name %></h1>
@@ -21,29 +18,36 @@
 			<div class="avatar-status">
 				<%= image_tag(current_reader.avatar) %>
 			</div>
+			<% if @errors %>
+				<ul>
+					<% @errors.each do |error| %>
+						<li><%= error %></li>
+					<% end %>
+				</ul>
+			<% end %>
 			<div class="input-edits">
 				<div class="input-group">
-					<%= f.input_field :first_name, disabled: true, class: "first_name" %>
+					<%= f.input_field :first_name, disabled: true, class: "first_name", placeholder: 'Nombre:'%>
 					<button class="edit-button" data-edit="first_name">Editar</button>
 				</div>
 				<div class="input-group">
-					<%= f.input_field :last_name,  disabled: true, class: "last_name"  %>
+					<%= f.input_field :last_name,  disabled: true, class: "last_name", placeholder: 'Apellidos:'  %>
 					<button class="edit-button" data-edit="last_name">Editar</button>
 				</div>
 				<div class="input-group">
-					<%= f.input_field :email, disabled: true, class: "email"  %>
+					<%= f.input_field :email, disabled: true, class: "email", placeholder: 'Email:'%>
 					<button class="edit-button" data-edit="email">Editar</button>
 				</div>
 				<div class="input-group">
-					<%= f.input_field :address, disabled: true, class: "address"  %>
+					<%= f.input_field :address, disabled: true, class: "address", placeholder: 'Dirección:'  %>
 					<button class="edit-button" data-edit="address">Editar</button>
 				</div>
 				<div class="input-group">
-					<%= f.input_field :postcode,  disabled: true, class: "postcode" %>
+					<%= f.input_field :postcode,  disabled: true, class: "postcode", placeholder: 'CP:'%>
 					<button class="edit-button" data-edit="postcode">Editar</button>
 				</div>
 				<div class="input-group">
-					<%= f.input_field :city, disabled: true, class: "city"  %>
+					<%= f.input_field :city, disabled: true, class: "city", placeholder: 'Ciudad:'  %>
 					<button class="edit-button" data-edit="city">Editar</button>
 				</div>
 				<div class="input-group submit-group">

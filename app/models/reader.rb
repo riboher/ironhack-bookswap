@@ -10,6 +10,10 @@ class Reader < ActiveRecord::Base
   has_many :books
   has_many :transactions
 
+  def name_validation
+    errors.add(:name, "Tienes que poner un nombre!" )
+  end
+
   def has_credit?(book)
     self.credit > book.price
   end
