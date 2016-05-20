@@ -13,14 +13,17 @@ $(document).on('page:change',function(){
 	function showLogForm(method){
 		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
 	}
-	//USER INFO EDITION
+	//FORM EDITION
 	$('.edit-button').on('click',function(event){
 		event.preventDefault();
-		var attribute = $(this).data('user');
-		if ($('.' + attribute).prop('disabled')){
-			$('.' + attribute).prop('disabled',false);
+		var attribute = $(this).data('edit');
+		var attrClass = $('.' + attribute);
+		if (attrClass.prop('disabled') && attribute != 'price'){
+			attrClass.prop('disabled',false);
+			attrClass.css('color','#119966');
 		}else {
-			$('.' + attribute).prop('disabled',true);
+			attrClass.prop('disabled',true);
+			attrClass.css('color','#4C5454');
 		}
 	});
 
@@ -32,7 +35,7 @@ $(document).on('page:change',function(){
 		var baseUrl = window.location.href;
 		$.ajax({
 			method: 'get',
-			url: "my_books",
+			url: baseUrl + "/my_books",
 			dataType: 'json',
 			success: getBooks,
 			error: function(){

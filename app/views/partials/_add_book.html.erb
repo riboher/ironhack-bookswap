@@ -6,21 +6,39 @@
 	  <div class="modal-fade-screen">
 	    <div class="modal-inner">
 	      <div class="modal-close" for="modal-book"></div>
-	      <h1>Yay! We found it! Check the info and submit your new book!</h1>
+	      <h3 class="new-book-heading">Es este tu libro? Si no ves algún campo, puedes editarlo a mano!</h3>
 	      	<section class="js-new-book-form">
 	      		<%= simple_form_for books_create_path do |f| %>
 	      		<%= image_tag("", class: "cover") %>
 	      		<div class="book-data">
-	      			<%= f.input_field :title, disabled: true, class: "title" %>
-	      			<%= f.input_field :author, disabled: true, class: "author" %>
-	      			<%= f.input_field :publisher, disabled: true, class: "publisher" %>
-	      			<%= f.input_field :year, disabled: true, class: "year" %>
-	      			<%= f.label "You'll get: "  %>
-	      			<%= f.input_field :price, disabled: true, class: "price" %>
-	      			<%= f.hidden_field :isbn, class: "isbn" %>
-	      			<%= f.label "People love a good description: " %>
-	      			<%= f.text_field :description, class: "description" %>
-	      			<%= f.submit "Add book to collection" %>
+		      		<div class="input-group">
+		      			<%= f.input_field :title, disabled: true, class: "title" %>
+		      			<button class="edit-button" data-edit="title">Editar</button>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.input_field :author, disabled: true, class: "author" %>
+		      			<button class="edit-button" data-edit="author">Editar</button>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.input_field :publisher, disabled: true, class: "publisher" %>
+		      			<button class="edit-button" data-edit="publisher">Editar</button>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.input_field :year, disabled: true, class: "year" %>
+		      			<button class="edit-button" data-edit="year">Editar</button>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.label "You'll get: "  %>
+		      			<%= f.input_field :price, disabled: true, class: "price" %>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.label "People love a good description: " %>
+		      			<%= f.text_field :description, class: "description" %>
+		      		</div>
+		      		<div class="input-group">
+		      			<%= f.submit "Add book to collection" %>
+		      		</div>
+		      			<%= f.hidden_field :isbn, class: "isbn" %>
 	      		</div>
 	      		<% end %>
 	      	</section>

@@ -45,15 +45,6 @@
 	.input-edits {
 		float: right;
 	}
-	.input-group {
-		position: relative;
-		.edit-button {
-			position: absolute;
-		    right: 0;
-		    z-index: 1;
-		    top: 1px;
-		}
-	}
 	.submit-group {
 		text-align: center;
 		margin-top: 15px;
@@ -62,4 +53,25 @@
 
 .button-filters {
 	margin-top: 50px;
+}
+
+.input-group {
+	position: relative;
+	input {
+		&:focus {
+			outline: 0;
+		}
+	}
+	.edit-button {
+		position: absolute;
+	    bottom: 15px;
+	    right: 0;
+	    background: transparent;
+	    color: #222;
+	    font-size: 13px;
+	    z-index: 1;
+	    &:focus {
+	    	outline: 0;
+	    }
+	}
 }

@@ -7,8 +7,7 @@ $(document).on('page:change',function(){
     }
   });
 
-  $(".modal-fade-screen, .modal-close").on("click", function() {
-    debugger;
+  $(".modal-fade-screen, .modal-close, .js-new-book-form input[type='submit']").on("click", function() {
     $(".modal-state:checked").prop("checked", false).change();
   });
 

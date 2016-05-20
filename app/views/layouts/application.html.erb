@@ -8,7 +8,11 @@
 </head>
 <body>
 <%= render 'partials/topbar' %>
-<div class="flash-container"></div>
+<% flash.each do |key, value| %>
+	<%= content_tag :div, value, class: "flash-#{key}" %>
+<% end %>
+<div class="flash-container">
+</div>
 <%= yield %>
 <!-- MODAL FORM FOR VIEW BOOK DATA  -->
 <%= render 'partials/add_book' %>
