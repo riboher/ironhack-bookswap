@@ -20,9 +20,13 @@
 		<section class="book-box">
 			<% if reader_signed_in? %>
 				<article class="book-owner">
-					<p>This books belongs to:</p>
+					<p>This book belongs to:</p>
 					<%= image_tag(book.reader.avatar, size: '100x100') %>
 					<p class="book-owner-name"><%= format_owner_name(book.reader.first_name,book.reader.last_name)%></p>
+					<% if book.description %>
+						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> says about this book: </p>
+						<p><%= book.description %></p>
+					<% end %>
 				</article>
 				<article class="swap-book">
 					<%= button_to swap_book_path(book.id), disabled: compare_credit(book.price,current_reader.credit) do %>

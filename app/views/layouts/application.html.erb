@@ -41,19 +41,19 @@
 	    <div class="modal-inner">
 	      <div class="modal-close" for="modal-book"></div>
 	      <h1>Yay! We found it! Check the info and submit your new book!</h1>
-	      <form class='js-new-book-form' data-remote="true">
+	      <form class='js-new-book-form'>
 	      	<img src="" alt="book cover" class="cover">
 	      	<div class="book-data">
 	      		<input type="text" class="title" disabled>
 		      	<input type="text" class="author" disabled>
 		      	<input type="text" class="publisher" disabled>
 		      	<input type="text" class="year" disabled>
-		      	<label for="price">You'll obtain</label>
+		      	<label for="price">You'll obtain: </label>
 		      	<input type="text" class="price" disabled>
 		      	<input type="hidden" class="isbn" disabled>
-		      	<textarea name="description" id="" cols="20" rows="2" placeholder="Enter a description">
-		      	</textarea>
-		      	<button type="submit">Yes!</button>
+		      	Enter a description to sell it faster!
+		      	<textarea name="description" id="" cols="20" rows="2"></textarea>
+		      	<button type="submit" class="modal-close" for="modal-book">Yes!</button>
 	      	</div>
 	      </form>
 	    </div>

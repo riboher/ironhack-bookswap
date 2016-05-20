@@ -1,3 +1,19 @@
+.purchase-container {
+    overflow: auto;
+    padding: 25px 0 25px 60px;
+    img {
+    	float: left;
+    	width: 80px;
+    }
+    .purchase-info {
+    	text-align: left; 
+    	padding-left: 120px;
+    	span {
+    		font-weight: bold;
+    	}
+    }
+}
+
 .user-container {
 	margin-top: 30px;
 }
@@ -18,15 +34,9 @@
 	.avatar-status {
 		float: left;
 		position: relative;
-		border: 2px solid #1EA896;
+		border: 2px solid $green;
 	    border-radius: 14px;
 	    box-shadow: 0px 2px 9px rgba(0,0,0,.4);
-		.rating-star {
-			position: absolute;
-		    bottom: -11%;
-		    left: 42%;
-		    color: #F3DC15;
-		}
 	}
 	abbr {
 		display: none;

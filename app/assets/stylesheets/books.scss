@@ -1,7 +1,7 @@
 // Place all the styles related to the books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$green: #1EA896;
+$green: #119966;
 $red: #FF715B;
 $brown: #523F38;
 $gray: #4C5454;
@@ -63,7 +63,7 @@ form.search-bar input.search-isbn[type="search"] {
 .book {
 	margin: 25px auto 20px;
 	backface-visibility: hidden;
-
+	min-height: 580px;
 	.back .book-box {
 		text-align: center;
 		background-color: #fff;
