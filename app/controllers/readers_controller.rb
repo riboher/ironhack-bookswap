@@ -2,6 +2,7 @@ class ReadersController < ApplicationController
   before_action :authenticate_reader!
 
   def show
+    @reader = Reader.new
     if session[:transaction_id]
       t = Transaction.find(session[:transaction_id])
       @book = Book.find(t.book_id)

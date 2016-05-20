@@ -11,14 +11,6 @@ $(document).on('page:change',function(){
 		}
 	}
 
-	// var logButton = document.getElementsByClassName('js-access-button');
-
-	// for (var i = 0; i < logButton.length; i++){
-	// 	logButton[i].addEventListener('click',function(){
-	// 		showLogForm(this.getAttribute('data-session'));
-	// 	});
-	// }
-
 	function showLogForm(method){
 		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
 	}
