@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.flip.min.js
+//= require typeahead.js
 //= require_tree .
 

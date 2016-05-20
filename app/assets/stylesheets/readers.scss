@@ -1,3 +1,32 @@
+form.typeahead-search-form input[type="search"] {
+	width: 790px;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.tt-menu.tt-open {
+	background: darken($green, 5%);
+}
+
+.tt-dataset.tt-dataset-books {
+    color: #f1f1f1;
+    line-height: 40px;
+    width: 760px;
+	&:hover {
+		color: #fff;
+	}
+
+	.tt-suggestion {
+		cursor: pointer;
+		padding: 0 40px;
+		&:hover {
+			background: darken($green,10%);
+		}
+	}
+}
+
+
 
 .purchase-container {
     overflow: auto;

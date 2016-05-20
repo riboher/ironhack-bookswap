@@ -16,6 +16,11 @@ class BooksController < ApplicationController
     end
   end
 
+  def book_query
+    keyword = params[:query].capitalize
+    @books = Book.where("title LIKE ?","%#{keyword}%")
+  end
+
   private
   def book_params
     params.require(:book).permit(:title,:author,:year,:isbn,:publisher,:description,:price,:cover)
