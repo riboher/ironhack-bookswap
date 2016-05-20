@@ -24,15 +24,16 @@
 	<li class="add-book-menu">
 		<form class="search-bar js-create-book" role="search">
 		  	<input type="search" class="search-isbn" placeholder="Enter ISBN" />
-		  	<button type="submit"><i class="fa fa-search"></i></button>
+		  	<button type="submit" class="isbn-submit"><i class="fa fa-search"></i></button>
 		</form>
 	</li>
 	<li>
 		<span>Ahoi <%= current_reader.first_name %></span>
-		<%= link_to '', reader_path(current_reader.id), class: "fa fa-user fa-2x" %>
+		<%= image_tag(current_reader.avatar, size: '30x30', class: 'profile-pic') %>
+		<%= link_to '', reader_path(current_reader.id), class: "my-profile" %>
 	</li>
 	<li>
-		<%= link_to 'Log out', destroy_reader_session_path, method: 'delete' %>
+		<%= link_to '', destroy_reader_session_path, method: 'delete', class: "sign-out" %>
 	</li>
 	<% end %>
 </ul>
@@ -59,7 +60,7 @@
 		      	<label for="price">You'll obtain: </label>
 		      	<input type="text" class="price" disabled>
 		      	<input type="hidden" class="isbn" disabled>
-		      	Enter a description to sell it faster!
+		      	Enter a description to bookswap it faster!
 		      	<textarea name="description" id="" cols="20" rows="2"></textarea>
 		      	<button type="submit" class="modal-close" for="modal-book">Yes!</button>
 	      	</div>
