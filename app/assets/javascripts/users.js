@@ -2,25 +2,18 @@ $(document).on('page:change',function(){
 
 	//USER LOGIN METHODS
 
-	var signInButton = $('.sign');
-	var logInButton = $('.log');
+	var logButton = document.getElementsByClassName('js-access-button');
 
-	signInButton.on('click',function(){
-		showLogForm('signup');
-		console.log("HOLA")
-	});
-
-	logInButton.on('click',function(){
-		showLogForm('login');
-		console.log("HOLA")
-	});
+	for (var i = 0; i < logButton.length; i++){
+		logButton[i].addEventListener('click',function(){
+			showLogForm(this.getAttribute('data-session'));
+		});
+	}
 
 	function showLogForm(method){
 		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
 	}
-
 	//USER INFO EDITION
-
 	$('.edit-button').on('click',function(event){
 		event.preventDefault();
 		var attribute = $(this).data('user');
@@ -39,7 +32,8 @@ $(document).on('page:change',function(){
 		var baseUrl = window.location.href;
 		$.ajax({
 			method: 'get',
-			url: baseUrl + "/mybooks",
+			url: "my_books",
+			dataType: 'json',
 			success: getBooks,
 			error: function(){
 			}
@@ -47,6 +41,7 @@ $(document).on('page:change',function(){
 	}
 
 	function getBooks(response){
+		
 		response.books['on_sale'].forEach(function(item){
 			$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
 		});	
