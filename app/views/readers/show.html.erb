@@ -1,17 +1,17 @@
 <% if notice %>
-<div class="flash-notice">
-	<p><%= notice %></p>
-	<section class="purchase-container">
-		<% if @book %>
-			<%= image_tag(@book.cover) %>
-			<article class="purchase-info">
-				<h3>Congratulations <%= current_reader.first_name %>! This is your Bookswap number <%= get_bookswap_count(current_reader) %>! Keep going! Take a look to the book below: </h3>
-				<p><span>Title:</span> <%= @book.title %></p>
-				<p><span>Author:</span> <%= format_author(@book.author) %></p>
-			</article>
-		<% end %>
-	</section>
-</div>
+<% if @book %>
+	<div class="flash-notice">
+		<section class="purchase-container">
+			
+				<%= image_tag(@book.cover) %>
+				<article class="purchase-info">
+					<h3>Congratulations <%= current_reader.first_name %>! This is your Bookswap number <%= get_bookswap_count(current_reader) %>! Keep going! Take a look to the book below: </h3>
+					<p><span>Title:</span> <%= @book.title %></p>
+					<p><span>Author:</span> <%= format_author(@book.author) %></p>
+				</article>
+		</section>
+	</div>
+<% end %>
 <% end %>
 <div class="user-container">
 	<section class="user-panel">

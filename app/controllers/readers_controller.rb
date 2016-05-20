@@ -11,12 +11,16 @@ class ReadersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if current_reader.update(reader_params)
-        format.html { redirect_to reader_path , notice: "Your info was succesfully updated" }
-      else
-        format.html { redirect_to reader_path , notice: "Something went wrong. It wasn't possible to update your info"}
+    if reader_params != nil
+      respond_to do |format|
+        if current_reader.update(reader_params)
+          format.html { redirect_to reader_path , notice: "Your info was succesfully updated" }
+        else
+          format.html { redirect_to reader_path , notice: "Something went wrong. It wasn't possible to update your info"}
+        end
       end
+    else
+      redirect_to reader_path, notice: "Nada que actualizar, sigues siendo el mismo :) "
     end
   end
 
@@ -34,6 +38,8 @@ class ReadersController < ApplicationController
 
   private
   def reader_params
-    params.require(:reader).permit(:first_name, :last_name, :email, :address, :postcode, :city)
+    if params[:reader]
+      params.require(:reader).permit(:first_name, :last_name, :email, :address, :postcode, :city)
+    end
   end
 end
