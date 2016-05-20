@@ -65,7 +65,7 @@ $(document).on('page:change',function(){
 					'<div class="front">'+
 						'<section class="book-box">'+
 							'<article class="book-box-actions">'+
-								'<a href="#" class="book-price">'+price+'<i class="fa fa-connectdevelop"></i></a>'+
+								'<a href="#" class="book-price">'+price+'<i class="fa fa-book"></i></a>'+
 							'</article>'+
 							'<article class="book-thumbnail">'+
 								'<img src='+cover+'>'+

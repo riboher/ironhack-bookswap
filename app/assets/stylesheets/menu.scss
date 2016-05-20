@@ -1,0 +1,89 @@
+.top-bar {
+    text-align: right;
+    background: $green;
+    a, span {
+    	color: #fff;
+    }
+}
+
+.menu {
+	button{
+		margin: .50em 0;
+		padding: .5em .75em;
+		color: #fff;
+		transition: all .1s ease-in-out;
+		&:hover {
+			background-color: #fff;
+			color: $green;
+		}
+	} 
+	a:not(:before) {
+		padding: .5em .75em;
+		color: #fff;
+		transition: all .1s ease-in-out;
+	}
+	a:hover {
+			color: #08415C;
+		}
+	
+	.search-bar {
+		margin-top: 9px;
+		.isbn-submit {
+			background: #08415C;
+		    padding: 0px 15px;
+		    margin: 1px;
+		}
+	}	
+}
+
+.browsing:before {
+	font-family: fontAwesome;
+	content: "\f279";
+	vertical-align: middle;
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+.sign:before {
+	font-family: fontAwesome;
+	content: "\f1e6";
+	vertical-align: middle;
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+.log:before {
+	font-family: fontAwesome;
+	content: "\f20e";
+	vertical-align: middle;
+	font-size: 18px;
+	padding-right: 10px;
+}
+
+.my-profile {
+	&:before {
+		font-family: fontAwesome;
+		content: "\f1de";
+		vertical-align: middle;
+		font-size: 22px;
+	}
+}
+
+.sign-out {
+	&:before {
+		font-family: fontAwesome;
+		content: "\f08b";
+		vertical-align: middle;
+		font-size: 22px;		
+
+	}
+}
+
+.profile-pic {
+	display: inline;
+    vertical-align: middle;
+    background: #fff;
+    width: 55px;
+    height: 55px;
+    margin: 0 20px;
+}

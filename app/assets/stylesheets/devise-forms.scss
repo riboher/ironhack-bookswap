@@ -1,11 +1,43 @@
 @import 'bourbon/bourbon';
 @import 'neat/neat';
 
-.devise-forms {
-	@include outer-container;
-	.form-inputs {
-		@include span-columns(6);
-		@include shift(3);
+// .devise-forms {
+// 	@include outer-container;
+// 	.form-inputs {
+// 		@include span-columns(6);
+// 		@include shift(3);
 
+// 	}
+// }
+
+.devise-forms {
+	h2 {
+		font-size: 2.5em;
+	    color: #119966;
+	    text-align: center;
+	    font-weight: 300;
+	    padding: 0 0 25px;
+	    margin: 0;
+	}
+
+	label {
+		color: #4C5454;
+	    font-size: 19px;
+	    padding-bottom: 8px;
+	}
+	.form-actions {
+		margin: 16px 0;
+		input[type="submit"] {
+			display: block;
+		    width: 100%;
+		}
+	}
+
+	.shared-link {
+		text-align: center;
+		a {
+			padding: 0 30px;
+			border-right: 1px solid #aaa;
+		}
 	}
 }

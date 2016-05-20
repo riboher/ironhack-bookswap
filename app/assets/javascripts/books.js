@@ -48,6 +48,7 @@ $(document).on('page:change',function(){
 		function generateForm(title,isbn,author,year,publisher,cover,totalPrice){
 			$("#modal-book.modal-state").prop("checked", true);
 			var form = $('.js-new-book-form');
+			
 			form.find('.cover').attr('src',cover);
 			form.find('.title').val(title);
 			form.find('.author').val(author);

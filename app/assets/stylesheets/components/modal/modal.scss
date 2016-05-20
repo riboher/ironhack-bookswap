@@ -4,7 +4,7 @@
 
 .modal {
   $base-border-color: #dcdcdc !default;
-  $base-border-radius: 3px !default;
+  $base-border-radius: 1px !default;
   $base-background-color: #fff !default;
   $base-font-size: 1em !default;
   $base-line-height: 1.5em !default;
@@ -14,7 +14,7 @@
   $medium-screen: 40em !default;
   $large-screen: 53.75em !default;
   $base-font-color: $dark-gray !default;
-  $modal-padding: 1em;
+  $modal-padding: 3em;
   $modal-background: $base-background-color;
   $modal-close-color: $light-gray;
   $modal-image-height: 335px;
@@ -42,7 +42,7 @@
 
   .modal-fade-screen { // overlay
     @include position(fixed, 0);
-    background-color: rgba(#000, 0.85);
+    background-color: rgba(#000, 0.60);
     opacity: 0;
     padding-top: 0.6em;
     text-align: left;
@@ -100,7 +100,7 @@
     width: 95%;
 
     @include media($medium-screen) {
-      max-height: 90%;
+      max-height: 100%;
       padding: $modal-padding;
       width: 60%;
     }
