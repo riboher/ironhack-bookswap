@@ -4,12 +4,7 @@ $(document).on('page:change',function(){
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
 		getBook(parseISBN(isbn));
-		$('.flash-container').prepend('<div class="sk-folding-cube">'+
-							  '<div class="sk-cube1 sk-cube"></div>'+
-							  '<div class="sk-cube2 sk-cube"></div>'+
-							  '<div class="sk-cube4 sk-cube"></div>'+
-							  '<div class="sk-cube3 sk-cube"></div>'+
-							'</div>');
+		$('.flash-container').prepend(spinLoader);
 	});
 
 		function parseISBN(isbn) {
@@ -124,5 +119,12 @@ $(document).on('page:change',function(){
 	  	trigger: 'click',
 	  	forceHeight: true
 	});
+
+	var spinLoader ='<div class="sk-folding-cube">'+
+						  '<div class="sk-cube1 sk-cube"></div>'+
+						  '<div class="sk-cube2 sk-cube"></div>'+
+						  '<div class="sk-cube4 sk-cube"></div>'+
+						  '<div class="sk-cube3 sk-cube"></div>'+
+					'</div>'
 
 });
