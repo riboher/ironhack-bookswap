@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     book = current_reader.books.create(book_params)
     respond_to do |format|
       if book.save
-        flash[:notice] = "Your book was succesfully created"
+        flash[:notice] = "Genial #{current_reader.first_name}! Tu libro ha sido creado."
         format.html { redirect_to edit_reader_password_path }
       else
         flash[:error] = "Something went wrong. It wasn't possible to create the book"
