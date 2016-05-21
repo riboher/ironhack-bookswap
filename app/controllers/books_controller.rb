@@ -20,7 +20,7 @@ class BooksController < ApplicationController
 
   def book_query
     keyword = params[:query].capitalize
-    @books = Book.where("title LIKE ?","%#{keyword}%")
+    @books = Book.where("title LIKE ? AND is_available = ?","%#{keyword}%", true)
   end
 
   def book_search

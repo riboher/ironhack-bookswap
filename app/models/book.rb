@@ -7,14 +7,14 @@ class Book < ActiveRecord::Base
 
   def self.get_available_books(current_reader)
     if current_reader != nil
-      all.where.not(reader_id: current_reader.id).where(is_available: true)
+      all.where.not(reader_id: current_reader.id).where(is_available: true).order(created_at: :desc)
     else
-      all.where(is_available: true)
+      all.where(is_available: true).order(created_at: :desc)
     end
   end
 
   def self.get_books_from(reader)
-    where(reader_id: reader.id).where(is_available: true)
+    where(reader_id: reader.id).where(is_available: true).order(created_at: :desc)
   end
 
   def has_ownership?(owner)
