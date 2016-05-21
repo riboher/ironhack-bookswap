@@ -1,15 +1,15 @@
 $base-spacing: 1.5em !default;
 $flashes: (
-  "alert": #fff6bf,
-  "error": #fbe3e4,
-  "notice": #e5edf8,
-  "success": #e6efc2,
+  "alert": #EC9A29,
+  "error": #C03221,
+  "notice": #2589BD,
+  "success": #2CEAA3,
 ) !default;
 
 @each $flash-type, $color in $flashes {
   .flash-#{$flash-type} {
     background-color: $color;
-    color: shade($color, 60%);
+    color: lighten($color, 50%);
     display: block;
     padding: $base-spacing / 2;
     text-align: center;

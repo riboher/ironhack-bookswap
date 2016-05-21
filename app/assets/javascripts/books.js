@@ -87,7 +87,7 @@ $(document).on('page:change',function(){
 			url: '/books/create',
 			data: data,
 			success: function(){
-				var msg = "Your book has been succesffully created";
+				var msg = "Your book has been succesfully created";
 				triggerResult('success',msg);
 				
 			},
