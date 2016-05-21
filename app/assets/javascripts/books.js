@@ -4,6 +4,12 @@ $(document).on('page:change',function(){
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
 		getBook(parseISBN(isbn));
+		$('.flash-container').prepend('<div class="sk-folding-cube">'+
+							  '<div class="sk-cube1 sk-cube"></div>'+
+							  '<div class="sk-cube2 sk-cube"></div>'+
+							  '<div class="sk-cube4 sk-cube"></div>'+
+							  '<div class="sk-cube3 sk-cube"></div>'+
+							'</div>');
 	});
 
 		function parseISBN(isbn) {
@@ -44,6 +50,7 @@ $(document).on('page:change',function(){
 		}
 
 		function generateForm(title,isbn,author,year,publisher,cover,totalPrice){
+			$('.flash-container').empty();
 			$("#modal-book.modal-state").prop("checked", true);
 			var form = $('.js-new-book-form');
 			
