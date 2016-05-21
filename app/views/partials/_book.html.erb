@@ -2,7 +2,7 @@
 	<div class="front">
 		<section class="book-box">
 			<article class="book-box-actions">
-				<a href="#" class="book-price"><%= book.price %><i class="fa fa-book"></i></a>
+				<span class="book-price"><%= book.price %><i class="fa fa-book"></i><span/>
 			</article>
 			<article class="book-thumbnail">
 				<%= image_tag(book.cover) %>
@@ -11,17 +11,20 @@
 				<h6 class="book-title"><%= book.title %></h6>
 				<p class="book-author"><%= format_author(book.author) %></p>
 			</article>
+			<article>
+				<p  class="book-more-info">Saber más</p>
+			</article>
 		</section>
 	</div>
-	<div class="back">
+	<div class="back hidden">
 		<section class="book-box">
 			<% if reader_signed_in? %>
 				<article class="book-owner">
-					<p>This book belongs to:</p>
-					<%= image_tag(book.reader.avatar, size: '100x100') %>
+					<p>Este libro es de: </p>
 					<p class="book-owner-name"><%= format_owner_name(book.reader.first_name,book.reader.last_name)%></p>
+					<%= image_tag(book.reader.avatar, size: '100x100') %>
 					<% if book.description %>
-						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> says about this book: </p>
+						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> dice acerca de este libro: </p>
 						<p><%= book.description %></p>
 					<% end %>
 				</article>
@@ -35,15 +38,13 @@
 					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-connectdevelop"></i></a>
 				</article>
 			<% else %>
-				<h4>You're not logged in, are you?</h4>
-				<article>
+				<article class="back-login-buttons">
+					<h4>No estás conectado?</h4>
 					<div>
-						<p>You don't have an account?</p>
-						<button class="sign js-access-button" data-session="signup">Sign up</button>
+						<button class="sign js-access-button" data-session="signup">Regístrate</button>
 					</div>
 					<div>
-						<p>Already a member?</p>
-						<button class="log js-access-button" data-session="login">Log in</button>
+						<button class="log js-access-button" data-session="login">Conéctate</button>
 					</div>
 				</article>
 			<% end %>

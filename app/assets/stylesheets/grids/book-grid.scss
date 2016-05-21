@@ -25,6 +25,5 @@
 	.book {
 		@include span-columns(3);
 		@include omega(4n);
-		@include clearfix;
 	}
 }

@@ -52,36 +52,39 @@ form.search-bar input.search-isbn[type="search"] {
 }
 
 .book {
-	margin: 25px auto 20px;
+	margin: 0 auto;
 	backface-visibility: hidden;
-	min-height: 580px;
-	.back .book-box {
-		text-align: center;
-		background-color: #fff;
-		.swap:before {
-			font-family: fontAwesome;
-			content: "\f021";
-			vertical-align: middle;
-			font-size: 18px;
-			margin-right: 8px;
+	.back {
+		&.hidden {
+			display: none;
 		}
-	}
-
-	.front {
-		.book-box{
-			&:before {
-				content: "";
-				height: 100%;
-				width: 100%;
-				background: #fff;
-				z-index: 9999;
-				position: absolute;
-				top: 0;
-				left: 0;
-				opacity: 0;
+		.book-box {
+			background-color: #DCE1DE;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			article {
+				text-align: center;
 			}
-			&:hover:before {
-				opacity: .7;
+			.swap:before {
+				font-family: fontAwesome;
+				content: "\f021";
+				vertical-align: middle;
+				font-size: 18px;
+				margin-right: 8px;
+			}
+			.back-login-buttons {
+				margin: auto;
+				width: 100%;
+				text-align: center;
+				h4 {
+					color: $green;
+					font-size: 1.5em;
+				}
+				div {
+					margin-bottom: 2em;
+				}
 			}
 		}
 	}
@@ -112,29 +115,6 @@ form.search-bar input.search-isbn[type="search"] {
 				}
 			}
 		}
-		.show-info {
-			display: flex;
-		    align-items: center;
-		    justify-content: center;
-		    position: absolute;
-		    top: 35%;
-		    bottom: 50%;
-		    left: 50%;
-		    right: 50%;
-		    opacity: 0;
-		    transform: scale(0);
-		    transition: all .3s ease-in-out;
-		    z-index: 9999;
-
-		    button {
-		    	background: $red;
-		    	transition: background .2s ease-in-out;
-		    	&:hover {
-		    		background: darken( $red,10% );
-		    	}
-		    }
-		}
-
 		.book-thumbnail {
 		    margin: 0 auto;
 		    img {
@@ -144,21 +124,33 @@ form.search-bar input.search-isbn[type="search"] {
 		    }
 		}
 		.book-inner-elements {
-			padding: 25px;
-
+			padding: 5px 5px 0 18px;
+			position: relative;
+			&:after {
+				content: "";
+			    width: 86%;
+			    position: absolute;
+			    height: 1px;
+			    background: #e3e3e3;
+			}
 			.book-title {
-				margin-bottom: 0;
-				color: $green;
-				font-weight: 400;
+				margin-bottom: 12px;
+				color: #119966;
+				font-weight: 100;
+				font-size: 22px;
 			}
 			.book-author {
-				font-size: 10px;
-				font-style: italic;
-				font-weight: bold;
+				font-size: 14px;
+				font-weight: 600;
 			}
-			.book-description {
-				font-size: 15px;
-				line-height: 18px;
+		}
+		.book-more-info {
+			padding: 5px 5px 15px 18px;
+			color: $red;
+			font-size: 18px;
+			cursor: pointer;
+			&:hover {
+				color: darken($red,10%)
 			}
 		}
 	}

@@ -26,8 +26,10 @@ $(document).on('page:change',function(){
 	if (form){
 		form.addEventListener('submit',function(e){
 			e.preventDefault();
-			var query = this.getElementsByClassName('tt-input')[0].value;
+			var input = this.getElementsByClassName('tt-input')[0]
+			var query = input.value;
 			var book = query.split("-")[0];
+			input.value = "";
 
 			$.ajax({
 				method: 'get',
@@ -47,6 +49,7 @@ $(document).on('page:change',function(){
 			container.removeChild(container.firstChild);
 		}
 		container.innerHTML = book;
+		$('.back').removeClass('hidden');
 		$(".book").flip({
 		  	trigger: 'click',
 		  	forceHeight: true

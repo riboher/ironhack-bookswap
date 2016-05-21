@@ -15,5 +15,7 @@
 //= require turbolinks
 //= require jquery.flip.min.js
 //= require typeahead.js
+//= require imagesLoaded.min.js
+//= require packery.min.js
 //= require_tree .
 
