@@ -45,7 +45,7 @@ $(document).on('page:change',function(){
 	}
 
 	function getBooks(response){
-		
+		console.log(response)
 		response.books['on_sale'].forEach(function(item){
 			$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
 		});	
@@ -56,6 +56,7 @@ $(document).on('page:change',function(){
 			response.books[action].forEach(function(item){
 				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
 			});	
+			setMasonryLayout();
 		});
 	}
 
