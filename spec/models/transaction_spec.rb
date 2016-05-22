@@ -13,6 +13,17 @@ RSpec.describe Transaction, type: :model do
       Transaction.create(book_id: 3, buyer_id: 2, seller_id: 1)
       expect(Transaction.get_buyer_books(buyer).length).to eq(2)
     end
+
+    it 'should return the books ordered by the transactions cretion' do
+      buyer = create(:reader, id: 2)
+      create(:book, reader_id: 2, id: 1)
+      create(:book, reader_id: 1, id: 2)
+      b = create(:book, reader_id: 2, id: 3)
+      Transaction.create(book_id: 1, buyer_id: 2, seller_id: 1, created_at: Date.today.last_week)
+      Transaction.create(book_id: 2, buyer_id: 1, seller_id: 2, created_at: Date.today.last_month)
+      Transaction.create(book_id: 3, buyer_id: 2, seller_id: 1, created_at: Date.today.yesterday)
+      expect(Transaction.get_buyer_books(buyer).first).to eq(b)
+    end
   end
 
   describe '#get books from seller' do

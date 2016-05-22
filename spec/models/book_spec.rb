@@ -1,6 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Book, type: :model do
+
+  it 'has a valid factory' do
+    expect(build(:book)).to be_valid
+  end
+
+  it 'is invalid without a title' do
+    expect(build(:book, title: nil)).to_not be_valid
+  end
+
+  it 'is invalid without an author' do
+    expect(build(:book, author: nil)).to_not be_valid
+  end
+
+  it 'has an ISBN between 10 and 13 digits' do
+    expect(build(:book, isbn: '978635')).to_not be_valid
+  end
+
   describe '#get_available_books' do
     it 'retrieves all available books but the ones from the current user' do
       current_user = create(:reader, id: 1)
@@ -21,7 +38,7 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  describe '#get_books_from_user' do
+  describe '#get_books_from' do
     it 'retrieves all available books from a specific user' do
       current_reader = create(:reader, id: 5)
       create(:book,reader_id: 5)
@@ -32,7 +49,7 @@ RSpec.describe Book, type: :model do
     end
   end
 
-  describe '#check_ownership' do
+  describe '#has_ownership?' do
     it 'makes sure that a book belongs to a certain owner' do
       book = create(:book, reader_id: 3)
       expect(book.has_ownership?(build(:reader, id: 3))).to be true
