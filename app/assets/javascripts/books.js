@@ -33,7 +33,7 @@ $(document).on('page:change',function(){
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
 		getBook(parseISBN(isbn));
-		$('.flash-container').prepend(spinLoader);
+		$('.sk-folding-cube').toggleClass('hidden');
 	});
 
 	function parseISBN(isbn) {
@@ -74,10 +74,9 @@ $(document).on('page:change',function(){
 	}
 
 	function generateForm(title,isbn,author,year,publisher,cover,totalPrice){
-		$('.flash-container').empty();
+		$('.sk-folding-cube').toggleClass('hidden');
 		$("#modal-book.modal-state").prop("checked", true);
 		var form = $('.js-new-book-form');
-		
 		form.find('.cover').attr('src',cover);
 		form.find('.title').val(title);
 		form.find('.author').val(author);
@@ -136,12 +135,4 @@ $(document).on('page:change',function(){
     		$(self).find('.book-price').toggleClass('hidden');
     	},150);
     });
-    
-	var spinLoader ='<div class="sk-folding-cube">'+
-						  '<div class="sk-cube1 sk-cube"></div>'+
-						  '<div class="sk-cube2 sk-cube"></div>'+
-						  '<div class="sk-cube4 sk-cube"></div>'+
-						  '<div class="sk-cube3 sk-cube"></div>'+
-					'</div>';
-
 });

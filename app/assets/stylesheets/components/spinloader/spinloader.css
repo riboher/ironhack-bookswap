@@ -1,10 +1,19 @@
 .sk-folding-cube {
   margin: 20px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 48%;
+  z-index: 99999;
   -webkit-transform: rotateZ(45deg);
           transform: rotateZ(45deg);
+}
+
+.sk-folding-cube.hidden {
+  display: none;
 }
 
 .sk-folding-cube .sk-cube {
