@@ -26,23 +26,36 @@ form.search-bar input.search-isbn[type="search"] {
 	background: image-url("bg-hero.jpeg") center;
     background-size: cover;
 	height: 350px;
-	margin-bottom: 2em;
-	.sign-buttons {
-		text-align: center;
-		margin-top: 10em;
-		div {
-			background: rgba(255,255,255,0.8);
-    		padding: 2em;
-		}
-	}
+	position: relative;
 	.row-top {
 		@include vertical-align();
+		text-align: center;
+		color: $green;
+		z-index: 2;
+	}
+
+	.overlay {
+		background: rgba(255,255,255,0.45);
+	    position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    top: 0;
+	    z-index: 1;
+	}
+
+	h1 {
+		font-size: 4em;
+		margin-bottom: 0.2em;
 	}
 }
 
 .title {
 	text-align: center;
 	color: $green;
+	padding: 35px 0 30px;
+	margin-bottom: 30px;
+	margin-top: 0;
+	background-color: #DCE1DE;
 	h1 {
 		font-size: 2em;
 	}

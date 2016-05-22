@@ -17,12 +17,10 @@ form.search-bar {
 
   input[type=search] {
     appearance: none;
-    background-color: rgba(255,255,255,.8);
-    border: 1px solid $base-border-color;
+    background-color: rgba(255,255,255,1);
     box-sizing: border-box;
     display: block;
     font-size: 1em;
-    font-style: italic;
     margin: 0;
     padding: ($base-spacing / 2) ($base-spacing / 3);
     position: relative;
