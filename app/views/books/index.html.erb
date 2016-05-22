@@ -1,20 +1,20 @@
 <section class="hero-unit">
   <div class="row-top">
+    <h1>BookSwap</h1>
     <form class="search-bar" role="search" id="typeahead-search-form">
-      <input type="search" placeholder="Start BookSwapping!" name="book" id="books" />
-      <button type="submit">
-        <i class="fa fa-search"></i>
-      </button>
+      <button type="submit"></button>
+      <input type="search" placeholder="p.ej. 'El Quijote'" name="book" id="books" />
     </form>
   </div>
+  <div class="overlay"></div>
 </section>
 <div class="title">
   <% if reader_signed_in? %>
-    <h1>These books are readily available for you</h1>
-    <h3>Just click on any of them to swap them!</h3>
+    <h1>Empieza a buscar libros en Bookswap</h1>
+    <h3>Haz click para obtener más información</h3>
   <% else %>
-    <h1>These are all the books listed on BookSwap</h1>
-    <h3>Log in or register to start swapping them!</h3>
+    <h1>Estos son los libros disponibles en Bookswap</h1>
+    <h3>Accede al site y registra los libros que tengas</h3>
   <% end %>
 </div>
 <div class="row js-access-buttons">
