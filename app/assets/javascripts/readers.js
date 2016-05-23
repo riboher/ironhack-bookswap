@@ -27,6 +27,10 @@ $(document).on('page:change',function(){
 			attrClass.css('border-color','#ddd');
 		}
 	});
+	
+	$('#js-close-purchase').on('click',function(){
+		$('.flash-notice').remove();
+	});
 
 	//USER BOOKS FILTERING
 
