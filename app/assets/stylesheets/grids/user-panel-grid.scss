@@ -5,7 +5,7 @@
 	@include outer-container;
 	form {
 		@include span-columns(8);
-		@include shift(2);
+		@include shift(1);
 		.avatar-status {
 			@include span-columns(2 of 8);
 		}
@@ -21,7 +21,7 @@
 		}
 	}
 	.button-filters {
-		@include span-columns(6);
+		@include span-columns(5);
 		@include shift(4);
 	}
 }

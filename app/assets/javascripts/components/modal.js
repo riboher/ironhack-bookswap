@@ -1,5 +1,5 @@
 $(document).on('page:change',function(){
-  $("#modal-1, #modal-book").on("change", function() {
+  $("#modal-1, #modal-book, #modal-isbn").on("change", function() {
     if ($(this).is(":checked")) {
       $("body").addClass("modal-open");
     } else {

@@ -3,14 +3,11 @@
 
 .menu {
 	@include outer-container;
-	.add-book-menu {
-		@include span-columns(3);
-	}
 	li {
 		display: inline;
 		padding-left: 50px;
 	}
-	li:not(.add-book-menu){
+	li {
 		margin-top: 0;
 	}
 }

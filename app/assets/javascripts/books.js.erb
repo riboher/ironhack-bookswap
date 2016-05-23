@@ -70,10 +70,12 @@ $(document).on('page:change',function(){
     }
 
 	$('.js-create-book').on('submit',function(event){
+		$("#modal-isbn.modal-state").prop("checked", false);
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
 		getBook(parseISBN(isbn));
 		$('.sk-folding-cube').toggleClass('hidden');
+		$(this).find('input').val("");
 	});
 
 	function parseISBN(isbn) {

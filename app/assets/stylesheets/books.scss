@@ -22,6 +22,11 @@ form.search-bar input.search-isbn[type="search"] {
 	padding: 5px 0 5px 10px;
 }
 
+.new-book h3 {
+	font-size: 1.1em;
+	color: $green;
+}
+
 .hero-unit {
 	background: image-url("bg-hero.jpeg") center;
     background-size: cover;

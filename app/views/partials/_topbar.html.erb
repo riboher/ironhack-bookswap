@@ -13,10 +13,9 @@
 	</li>
 	<% if reader_signed_in? %>
 	<li class="add-book-menu">
-		<form class="search-bar js-create-book" role="search">
-		  	<input type="search" class="search-isbn" placeholder="Enter ISBN" />
-		  	<button type="submit" class="isbn-submit"><i class="fa fa-search"></i></button>
-		</form>
+		<label for="modal-isbn">
+			<a class="modal-trigger">Nuevo libro</a>
+		</label>
 	</li>
 	<li>
 		<span>Ahoi <%= link_to current_reader.first_name , reader_path(current_reader.id), class: 'my-profile'%></span>
