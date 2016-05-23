@@ -19,10 +19,10 @@
 		</form>
 	</li>
 	<li>
-		<span>Ahoi <%= current_reader.first_name %></span>
+		<span>Ahoi <%= link_to current_reader.first_name , reader_path(current_reader.id), class: 'my-profile'%></span>
 		<%= image_tag(current_reader.avatar, size: '30x30', class: 'profile-pic') %>
-		<%= link_to '', reader_path(current_reader.id), class: "my-profile" %>
 	</li>
+	<li class="credit-tab"><span class="current-credit">Your credit:&nbsp;<%= current_reader.credit %> </span></li>
 	<li>
 		<%= link_to '', destroy_reader_session_path, method: 'delete', class: "sign-out" %>
 	</li>
