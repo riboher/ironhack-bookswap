@@ -1,0 +1,9 @@
+<h1>Hola <%= @book_owner.first_name %></h1>
+
+<p>Un usuario de Bookswap se ha interesado por el siguiente libro:</p>
+<ul>
+	<li><%= @book.title %></li>
+	<li><%= @book.author %></li>
+	<li><%= @book.description %></li>
+	<li>Conseguirás <%= @book.price %> puntos por hacer este Swap!</li>
+</ul>
