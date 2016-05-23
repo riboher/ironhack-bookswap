@@ -1,6 +1,7 @@
 class Transaction < ActiveRecord::Base
   belongs_to :buyer, class_name: 'Reader'
   belongs_to :seller, class_name: 'Reader'
+  belongs_to :book
 
   def self.get_buyer_books(reader)
    Book.joins(:transactions).where("buyer_id = ?",reader.id).order('transactions.created_at desc')
