@@ -1,6 +1,6 @@
 .top-bar {
-	@include position(fixed, 0 0 null 0);
-	z-index: 999999;
+	// @include position(fixed, 0 0 null 0);
+	// z-index: 999999;
     text-align: right;
     background: $green;
     a, span {
