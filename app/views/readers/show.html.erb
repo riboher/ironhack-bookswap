@@ -53,22 +53,23 @@
 		<div class="button-group">
 		  <label>
 		    <input type="radio" name="button-group" value="on_sale" checked>
-		    <span class="button-group-item">Owned</span>
+		    <span class="button-group-item">Mis libros</span>
 		  </label>
 		  <label>
 		    <input type="radio" name="button-group" value="sold">
-		    <span class="button-group-item">Swapped - Given</span>
+		    <span class="button-group-item">Swapped - Entregados</span>
 		  </label>
 		  <label>
 		    <input type="radio" name="button-group" value="bought">
-		    <span class="button-group-item">Swapped - Received</span>
+		    <span class="button-group-item">Swapped - Recogidos</span>
 		  </label>
 		</div>
 	</section>
 </div>
-<div class="row js-append-books">
-	<section class="banner flash-alert">
-		<h2>No tienes libros disponibles</h2>
-		<p>Añade más libros y sigue sumando puntos</p>
-	</section>
-</div>
+<section class="banner flash-alert hidden">
+	<h2>No tienes libros disponibles</h2>
+	<label for="modal-isbn">
+		<p>Añade <a class="modal-trigger">más libros</a> y sigue sumando puntos</p>
+	</label> 
+</section>
+<div class="row js-append-books"></div>
