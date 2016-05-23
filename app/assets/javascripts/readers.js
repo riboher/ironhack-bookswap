@@ -47,10 +47,14 @@ $(document).on('page:change',function(){
 	}
 
 	function getBooks(response){
-		console.log(response)
-		response.books['on_sale'].forEach(function(item){
-			$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
-		});	
+		if(response.books['on_sale'].length == 0){
+			addBanner();
+		}else{
+			response.books['on_sale'].forEach(function(item){
+				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
+			});	
+		}
+		
 		var filters = $('.js-book-filters').find('input[type="radio"]');
 		filters.on('click',function(){
 			$('.js-append-books').empty();
