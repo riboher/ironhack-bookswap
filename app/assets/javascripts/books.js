@@ -1,6 +1,5 @@
 $(document).on('page:change',function(){
 
-
 	setMasonryLayout();
 
 	function getBookHeights(){
@@ -41,7 +40,6 @@ $(document).on('page:change',function(){
 	}
 
 	function parseXML(xml){
-		console.log("SUCCESS");
 		var title = $(xml).find('title').text();
 		var author = $(xml).find('author').text();
 		var year = $(xml).find('publicationdate').text();
@@ -114,11 +112,45 @@ $(document).on('page:change',function(){
 		flashNotice(notice,msg);
 	}
 
-    $('.row').on('click','.book',function(){
-    	getBookHeights();
+    $('.row').on('click','.book',function(event){
+    	var bookId = event.currentTarget.id;
     	var self = this;
+    	getBookHeights();
+    	getBookLocation(bookId).bind(self);
+    	$(self).data('swapped',bookId);
     	setTimeout(function(){
     		$(self).find('.book-price').toggleClass('hidden');
     	},150);
     });
+
+
+    function getBookLocation(bookId){
+    	var APIKEY = "key=AIzaSyAJwQ7qgwUYg9YyNhWHAWiiqBKRWJXaqGQ";
+    	var ENDPOINT = "https://maps.googleapis.com/maps/api/geocode/json?"
+
+    	var book = document.getElementById(bookId)
+    	var postcode = book.querySelector('.postcode').value;
+    	var address = book.querySelector('.address').value;
+    	var city = book.querySelector('.city').value;
+    	console.log(this);
+		$.ajax({
+			url: ENDPOINT + "address=" + address + postcode + city + "&region=es&" + APIKEY,
+			dataType: 'json',
+			success: getCoordinates,
+			error: function(){
+				console.log("No position was retrieved");
+			}
+		});
+    }
+
+    function getCoordinates(response){
+    	var lat = response.results[0].geometry.location.lat;
+    	var lng = response.results[0].geometry.location.lng;
+    	printMap(lat,lng)
+    	console.log(this);
+    }
+
+    function printMap(latitude,longitude){
+
+    }
 });

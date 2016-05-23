@@ -1,6 +1,5 @@
 function setMasonryLayout(){
 		imagesLoaded('.row',function(){
-			console.log("HOLA");
 			var grid = new Packery('.row',{
 				itemSelector: '.book',
 				percentPosition: true,

@@ -1,4 +1,4 @@
-<div class="book">
+<div class="book" id="<%= book.id %>">
 	<div class="front">
 		<section class="book-box">
 			<article class="book-box-actions">
@@ -37,6 +37,12 @@
 				<article class="book-box-actions">
 					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-book"></i></a>
 				</article>
+				<div class="js-book-location book-map"></div>
+				<div id="book-location-data">
+					<input type="hidden" class="postcode" value="<%= book.reader.postcode %>">
+					<input type="hidden" class="address" value="<%= book.reader.address %>">
+					<input type="hidden" class="city" value="<%= book.reader.city %>">
+				</div>
 			<% else %>
 				<article class="back-login-buttons">
 					<h4>No estás conectado?</h4>

@@ -30,7 +30,9 @@ $(document).on('page:change',function(){
 
 	//USER BOOKS FILTERING
 
-	retrieveAllBooks();
+	if(window.location.href.indexOf("readers") > -1) {
+       retrieveAllBooks();
+    }
 
 	function retrieveAllBooks(){
 		var baseUrl = window.location.href;
