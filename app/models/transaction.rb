@@ -18,6 +18,7 @@ class Transaction < ActiveRecord::Base
 
   def self.make_transaction(book,buyer,seller)
     book.update_attribute(:is_available, false)
+    ReaderMailer.swap_mail(book).deliver_now
     book.change_ownership(buyer)
     self.credit_update(book,buyer,seller)
     Transaction.create(book_id: book.id, buyer_id: buyer.id, seller_id: seller.id)
