@@ -78,6 +78,9 @@ form.search-bar input.search-isbn[type="search"] {
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			&.book-owner {
+				justify-content: flex-start;
+			}
 			article {
 				text-align: center;
 			}
@@ -99,6 +102,30 @@ form.search-bar input.search-isbn[type="search"] {
 				div {
 					margin-bottom: 2em;
 				}
+			}
+		}
+		.book-owner {
+			article{
+				&:first-child {
+					padding-top: 40px;
+				}
+				p {
+					font-size: 23px;
+					margin-bottom: 0;
+					color: $gray;
+				}
+				.book-description {
+					font-size: 15px;
+					margin-bottom: 16px;
+				}
+			}
+
+		}
+
+		.swap-book {
+			h6 {
+				color: $green;
+				margin-top: 12px;
 			}
 		}
 	}

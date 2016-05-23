@@ -12,20 +12,20 @@
 				<p class="book-author"><%= format_author(book.author) %></p>
 			</article>
 			<article>
-				<p  class="book-more-info">Saber más</p>
+				<p class="book-more-info">Saber más</p>
 			</article>
 		</section>
 	</div>
 	<div class="back hidden">
-		<section class="book-box">
+		<section class="book-box book-owner">
 			<% if reader_signed_in? %>
-				<article class="book-owner">
+				<article>
 					<p>Este libro es de: </p>
 					<p class="book-owner-name"><%= format_owner_name(book.reader.first_name,book.reader.last_name)%></p>
 					<%= image_tag(book.reader.avatar, size: '100x100') %>
 					<% if book.description %>
-						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> dice acerca de este libro: </p>
-						<p><%= book.description %></p>
+						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> dice: </p>
+						<p class="book-description"><%= book.description %></p>
 					<% end %>
 				</article>
 				<article class="swap-book">
@@ -35,7 +35,7 @@
 					<h6><%= book.price %> points</h6>
 				</article>
 				<article class="book-box-actions">
-					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-connectdevelop"></i></a>
+					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-book"></i></a>
 				</article>
 			<% else %>
 				<article class="back-login-buttons">

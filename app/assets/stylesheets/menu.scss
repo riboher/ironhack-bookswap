@@ -33,6 +33,16 @@
 		    padding: 0px 15px;
 		    margin: 1px;
 		}
+	}
+
+	.credit-tab {
+		padding-left: 0;
+		.current-credit:after {
+			font-family: fontAwesome;
+			content: "\f02d";
+			vertical-align: middle;
+			font-size: 18px;
+		}
 	}	
 }
 
@@ -61,11 +71,21 @@
 }
 
 .my-profile {
-	&:before {
-		font-family: fontAwesome;
-		content: "\f1de";
-		vertical-align: middle;
-		font-size: 22px;
+	position: relative;
+	padding-bottom: 2px;
+	&:after {
+		position: absolute;
+		content: "";
+		height: 2px;
+		width: 100%;
+		bottom: 0;
+		left: 0;
+		background-color: #fff;
+		transition: width .2s ease-in-out;
+	}
+	&:hover:after {
+		width: 0;
+		transform-origin: 0 0;
 	}
 }
 
