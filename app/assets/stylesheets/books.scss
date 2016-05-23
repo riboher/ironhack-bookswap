@@ -107,7 +107,7 @@ form.search-bar input.search-isbn[type="search"] {
 		.book-owner {
 			article{
 				&:first-child {
-					padding-top: 40px;
+					padding-top: 20px;
 				}
 				p {
 					font-size: 23px;
@@ -127,6 +127,15 @@ form.search-bar input.search-isbn[type="search"] {
 				color: $green;
 				margin-top: 12px;
 			}
+		}
+		.book-map {
+			@include border-bottom-radius(4px);
+			width: 98%;
+			margin: 0 auto;
+			height: 200px;
+			position: absolute;
+			bottom: 0;
+			margin: 0 1px 1px 1px;
 		}
 	}
 

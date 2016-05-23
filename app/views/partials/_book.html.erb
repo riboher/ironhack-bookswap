@@ -20,10 +20,9 @@
 		<section class="book-box book-owner">
 			<% if reader_signed_in? %>
 				<article>
-					<p>Este libro es de: </p>
 					<p class="book-owner-name"><%= format_owner_name(book.reader.first_name,book.reader.last_name)%></p>
-					<%= image_tag(book.reader.avatar, size: '100x100') %>
-					<% if book.description %>
+					<%= image_tag(book.reader.avatar, size: '80x80') %>
+					<% if book.description != "" %>
 						<p><%= format_owner_name(book.reader.first_name,book.reader.last_name) %> dice: </p>
 						<p class="book-description"><%= book.description %></p>
 					<% end %>
@@ -33,9 +32,6 @@
 					  <span class="swap">Swap it!</span>
 					<% end %>
 					<h6><%= book.price %> points</h6>
-				</article>
-				<article class="book-box-actions">
-					<a href="#" class="reader-credit">Your credit: <%= current_reader.credit %><i class="fa fa-book"></i></a>
 				</article>
 				<div class="js-book-location book-map"></div>
 				<div id="book-location-data">
