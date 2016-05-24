@@ -55,7 +55,12 @@ $(document).on('page:change',function(){
 			$('.banner').toggleClass('hidden');
 		}else{
 			response.books['on_sale'].forEach(function(item){
-				$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price));
+				$('.js-append-books').append(bookToHTML(item.book.book_details.id,
+														item.book.book_details.title,
+														item.book.book_details.author,
+														item.book.book_details.cover,
+														item.book.book_details.price,
+														item.book.avatar_path));
 			});	
 		}
 
@@ -64,10 +69,22 @@ $(document).on('page:change',function(){
 			$('.js-append-books').empty();
 			var action = $(this).val();
 			response.books[action].forEach(function(item){
+				console.log(item.book.avatar_path)
 				if(action == 'bought') {
-					$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price,'Reswap!'));
+					$('.js-append-books').append(bookToHTML(item.book.book_details.id,
+														item.book.book_details.title,
+														item.book.book_details.author,
+														item.book.book_details.cover,
+														item.book.book_details.price,
+														item.book.avatar_path,
+														'Reswap!'));
 				}else{
-					$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price));
+					$('.js-append-books').append(bookToHTML(item.book.book_details.id,
+														item.book.book_details.title,
+														item.book.book_details.author,
+														item.book.book_details.cover,
+														item.book.book_details.price,
+														item.book.avatar_path));
 				}
 				
 			});	
@@ -75,13 +92,13 @@ $(document).on('page:change',function(){
 		});
 	}
 
-	function bookToHTML(id,title,author,cover,price,action){
+	function bookToHTML(id,title,author,cover,price,avatar,action){
 		action = action || "";
 		return '<div class="book">'+
 					'<div class="front">'+
 						'<section class="book-box">'+
 							'<article class="book-thumbnail">'+
-								'<img src='+cover+'>'+
+								'<img src="'+setCover(cover,avatar)+'">'+
 							'</article>'+
 							'<article class="book-inner-elements">'+
 								'<h6 class="book-title">'+title+'</h6>'+
@@ -102,6 +119,14 @@ $(document).on('page:change',function(){
 			return "<a href='/books/"+id+"/reswap'>"+action+"</a>";
 		}else{
 			return "";
+		}
+	}
+
+	function setCover(cover,avatar){
+		if(avatar.indexOf('missing') > 0){
+			return cover;
+		}else{
+			return avatar;
 		}
 	}
 });

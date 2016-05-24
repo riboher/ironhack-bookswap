@@ -6,13 +6,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = current_reader.books.create(book_params)
+    book = current_reader.books.new(book_params)
     if book.save
-      # binding.pry
       flash[:notice] = "Genial #{current_reader.first_name}! Tu libro ha sido creado."
       redirect_to reader_path(current_reader.id)
     else
-      # binding.pry
       flash[:error] = "Hmmm...algo no ha ido como debería, tu libro no ha sido guardado."
       redirect_to root_path
     end
@@ -40,7 +38,6 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    # binding.pry
     params.require(:book).permit(:title,:author,:year,:isbn,:publisher,:description,:price,:cover,:avatar)
   end
 
