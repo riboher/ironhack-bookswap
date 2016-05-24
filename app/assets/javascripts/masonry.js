@@ -6,7 +6,7 @@ function setMasonryLayout(){
 				
 			});
 
-			$(".book").flip({
+			$(".book.swappable").flip({
 			  	trigger: 'click',
 			  	autoSize: true
 			});
