@@ -70,6 +70,65 @@ form.search-bar input.search-isbn[type="search"] {
 	}
 }
 
+#typeahead-search-form {
+	input[type="search"] {
+		background: none;
+		border: 0;
+		border-bottom: 3px solid $green;
+		box-shadow: none;
+		width: 790px;
+		padding-left: 50px;
+		padding-bottom: 2px;
+		font-size: 28px;
+		color: $green;
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	button {
+		left: 0;
+		background: none;
+		&:before {
+			font-family: fontAwesome;
+			content: "\f002";
+			vertical-align: middle;
+			font-size: 24px;
+			color: $green;
+		}
+	}
+}
+
+.tt-menu.tt-open {
+	background: darken(#fff,10%);
+}
+
+.tt-dataset.tt-dataset-books {
+    color: $green;
+    line-height: 50px;
+    width: 790px;
+	.tt-suggestion {
+		cursor: pointer;
+		padding: 0 40px;
+		position: relative;
+		font-size: 18px;
+		&:before {
+			position: absolute;
+			content: "";
+			width: 4px;
+			left: 0;
+			bottom: 0;
+			height: 0;
+			background-color: $green;
+			transform-origin: 0 0;
+			transition: all .15s ease-in-out;
+		}
+		&:hover:before {
+			height: 100%;
+		}
+	}
+}
+
 .book {
 	margin: 0 auto;
 	backface-visibility: hidden;
