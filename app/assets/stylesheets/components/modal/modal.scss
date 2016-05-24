@@ -118,9 +118,12 @@
     .js-new-book-form {
       width: 75%;
       margin-left: 0;
-      img {
+      .cover {
         width: 135px;
         float: left;
+        label {
+          font-size: 13px;
+        }
       }
 
       .book-data {

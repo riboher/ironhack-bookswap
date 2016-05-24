@@ -5,7 +5,7 @@
 				<span class="book-price"><%= book.price %><i class="fa fa-book"></i><span/>
 			</article>
 			<article class="book-thumbnail">
-				<%= image_tag(book.cover) %>
+				<%= image_tag(check_avatar(book)) %>
 			</article>
 			<article class="book-inner-elements">
 				<h6 class="book-title"><%= book.title %></h6>

@@ -15,4 +15,8 @@ module BooksHelper
   def compare_credit(price,credit)
     price > credit ? true : false
   end
+
+  def check_avatar(book)
+    book.avatar_file_name != nil ? book.avatar : book.cover
+  end
 end

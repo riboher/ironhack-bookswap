@@ -8,28 +8,33 @@
 	      <div class="modal-close" for="modal-book"></div>
 	      <h3 class="new-book-heading"></h3>
 	      	<section class="js-new-book-form">
-	      		<%= simple_form_for books_create_path do |f| %>
-	      		<%= image_tag("", class: "cover") %>
+	      		<%= simple_form_for Book.new, url: books_create_path do |f| %>
+	      		<div class="cover">
+	      			<%= image_tag("", class: 'cover-default') %>
+	      			<%= f.hidden_field :cover, class: 'cover-hidden' %>
+	      			<%= f.label 'Upload your own book cover' %>
+	      			<%= f.input :avatar, as: :file, class: 'custom-cover' %>
+	      		</div>
 	      		<div class="book-data">
 		      		<div class="input-group">
-		      			<%= f.input_field :title, disabled: true, class: "title", placeholder: 'Título' %>
+		      			<%= f.input_field :title, class: "title", placeholder: 'Título' %>
 		      			<button class="edit-button" data-edit="title">Editar</button>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.input_field :author, disabled: true, class: "author", placeholder: 'Autor' %>
+		      			<%= f.input_field :author, class: "author", placeholder: 'Autor' %>
 		      			<button class="edit-button" data-edit="author">Editar</button>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.input_field :publisher, disabled: true, class: "publisher", placeholder: 'Editorial' %>
+		      			<%= f.input_field :publisher, class: "publisher", placeholder: 'Editorial' %>
 		      			<button class="edit-button" data-edit="publisher">Editar</button>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.input_field :year, disabled: true, class: "year", placeholder: 'Año de publicación' %>
+		      			<%= f.input_field :year, class: "year", placeholder: 'Año de publicación' %>
 		      			<button class="edit-button" data-edit="year">Editar</button>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.label "Te damos: "  %>
-		      			<%= f.input_field :price, disabled: true, class: "price" %>
+		      			<%= f.label "Te damos:"  %>
+		      			<%= f.input_field :price, class: "price", as: :string %>
 		      		</div>
 		      		<div class="input-group">
 		      			<%= f.label "A la gente le encanta una buena descripción:" %>
