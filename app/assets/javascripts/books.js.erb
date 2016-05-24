@@ -73,13 +73,23 @@ $(document).on('page:change',function(){
 		$("#modal-isbn.modal-state").prop("checked", false);
 		event.preventDefault();
 		var isbn = $('.search-isbn').val();
-		getBook(parseISBN(isbn));
-		$('.sk-folding-cube').toggleClass('hidden');
-		$(this).find('input').val("");
+		isbn = parseISBN(isbn);
+		if(isbnIsValid(isbn)) {
+			getBook(isbn);
+			$('.sk-folding-cube').toggleClass('hidden');
+			$(this).find('input').val("");
+		}else{
+			flashNotice('error','El ISBN que has introducido no parece válido');
+		}
 	});
 
 	function parseISBN(isbn) {
-		return isbn.split("-").join("");
+		return isbnString = isbn.split("-").join("");	
+	}
+
+	function isbnIsValid(code){
+		var ISBNregexp = new RegExp("[0-9]{10,13}");
+		return ISBNregexp.test(code);
 	}
 
 	var ENDPOINT = "http://www.directtextbook.com/xml.php?key=4cf4a7b1a265e7a0710c24a1d4d72df4&isbn=";
@@ -97,7 +107,8 @@ $(document).on('page:change',function(){
 	}
 
 	function parseXML(xml){
-		if(!$(xml).find('error')){
+		var error = document.getElementsByTagName('error');
+		if(error.length == 0){
 			var title = $(xml).find('title').text();
 			var author = $(xml).find('author').text();
 			var year = $(xml).find('publicationdate').text();
@@ -112,7 +123,7 @@ $(document).on('page:change',function(){
 				if(!isNaN(price.text())) totalPrice += parseInt(price.text());
 			});
 			var totalPrice = Math.round(totalPrice/totalItems);
-			generateForm(true,isbn,author,year,publisher,cover,totalPrice);
+			generateForm(true,title,isbn,author,year,publisher,cover,totalPrice);
 		}else{
 			var totalPrice = 5
 			generateForm(false,"","","","","","",totalPrice);
@@ -134,7 +145,7 @@ $(document).on('page:change',function(){
 		form.find('.author').val(author);
 		form.find('.publisher').val(publisher);
 		form.find('.year').val(year);
-		form.find('.price').val(totalPrice + ' points');
+		form.find('.price').val(totalPrice + ' puntos');
 		form.find('.isbn').val(isbn);
 	}
 
