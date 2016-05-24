@@ -28,6 +28,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'guard-rails'
   gem 'guard-bundler'
+  gem 'selenium-webdriver'
 end
 
 group :development do
