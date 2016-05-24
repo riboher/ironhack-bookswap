@@ -2,14 +2,14 @@
 <ul class="menu">
 	<% if !reader_signed_in? %>
 		<li>
-			<button class="sign" data-session="signup">Sign in</button>
+			<button class="sign" data-session="signup">Registrarse</button>
 		</li>
 		<li>
-			<button class="log" data-session="login">Log in</button>
+			<button class="log" data-session="login">Acceder</button>
 		</li>
 	<% end %>
 	<li>
-		<%= link_to 'Browse books', root_path, class: 'browsing' %>
+		<%= link_to 'Ver libros', root_path, class: 'browsing' %>
 	</li>
 	<% if reader_signed_in? %>
 	<li class="add-book-menu">
@@ -21,7 +21,7 @@
 		<span>Ahoi <%= link_to current_reader.first_name , reader_path(current_reader.id), class: 'my-profile'%></span>
 		<%= image_tag(current_reader.avatar, size: '30x30', class: 'profile-pic') %>
 	</li>
-	<li class="credit-tab"><span class="current-credit">Your credit:&nbsp;<%= current_reader.credit %> </span></li>
+	<li class="credit-tab"><span class="current-credit">Crédito:&nbsp;<%= current_reader.credit %> </span></li>
 	<li>
 		<%= link_to '', destroy_reader_session_path, method: 'delete', class: "sign-out" %>
 	</li>
