@@ -7,14 +7,14 @@ class BooksController < ApplicationController
 
   def create
     book = current_reader.books.create(book_params)
-    respond_to do |format|
-      if book.save
-        flash[:notice] = "Genial #{current_reader.first_name}! Tu libro ha sido creado."
-        format.html { redirect_to edit_reader_password_path }
-      else
-        flash[:error] = "Something went wrong. It wasn't possible to create the book"
-        format.html { redirect_to all_path }
-      end
+    if book.save
+      # binding.pry
+      flash[:notice] = "Genial #{current_reader.first_name}! Tu libro ha sido creado."
+      redirect_to reader_path(current_reader.id)
+    else
+      # binding.pry
+      flash[:error] = "Hmmm...algo no ha ido como debería, tu libro no ha sido guardado."
+      redirect_to root_path
     end
   end
 
@@ -40,7 +40,8 @@ class BooksController < ApplicationController
 
   private
   def book_params
-    params.require(:book).permit(:title,:author,:year,:isbn,:publisher,:description,:price,:cover)
+    # binding.pry
+    params.require(:book).permit(:title,:author,:year,:isbn,:publisher,:description,:price,:cover,:avatar)
   end
 
   def resource_name
