@@ -21,10 +21,7 @@ Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             price: 19,
             isbn: "9788498380798",
             cover: "http://www.directtextbook.com/large/8498380790.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
             is_available: false,
             reader_id: 2)
 
@@ -35,10 +32,8 @@ Book.create(title: "Lucky star las lunas de jupiter",
             price: 9,
             isbn: "9788402077110",
             cover: "http://bit.ly/1R3HehX",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            description: "Eum a quod, voluptas doloremque magni inventore error nemo quidem
+            optio consectetur ullam",
             reader_id: 1
             )
 
@@ -50,9 +45,7 @@ Book.create(title: "Post Office",
             isbn: "9780061177576",
             cover: "http://www.directtextbook.com/large/0061177571.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            Eum a quod maxime assumenda sapiente numquam mollitia autem explicabo nulla quos.",
             is_available: false,
             reader_id: 1
             )
@@ -64,10 +57,7 @@ Book.create(title: "Los Relatos 4 (Spanish Edition)",
             price: 8,
             isbn: "9788420601281",
             cover: "http://www.directtextbook.com/large/9788420601281.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
             reader_id: 2
             )
 
@@ -78,10 +68,7 @@ Book.create(title: "La casa de los espíritus",
             price: 12,
             isbn: "9788447306619",
             cover: "http://www.directtextbook.com/large/8447306615.jpg",
-            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            description: "Maxime assumenda sapiente numquam mollitia autem explicabo nulla quos.",
             reader_id: 2,
             is_available: false
             )
@@ -94,9 +81,7 @@ Book.create(title: "El Guardian Entre el Centeno (Spanish Edition)",
             isbn: "9788420634098",
             cover: "http://www.directtextbook.com/large/8420634093.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum a quod, voluptas doloremque magni inventore error nemo quidem
-            optio consectetur ullam, maxime assumenda sapiente numquam mollitia
-            autem explicabo nulla quos.",
+            Assumenda sapiente numquam mollitia autem explicabo nulla quos.",
             reader_id: 1
             )
 
