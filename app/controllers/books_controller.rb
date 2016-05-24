@@ -32,6 +32,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def reswap
+    book = Book.find(params[:id])
+    book.update_attribute(:is_available, true)
+    redirect_to reader_path(current_reader.id)
+  end
+
   private
   def book_params
     params.require(:book).permit(:title,:author,:year,:isbn,:publisher,:description,:price,:cover)

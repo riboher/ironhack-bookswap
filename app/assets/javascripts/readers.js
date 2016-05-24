@@ -55,7 +55,7 @@ $(document).on('page:change',function(){
 			$('.banner').toggleClass('hidden');
 		}else{
 			response.books['on_sale'].forEach(function(item){
-				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
+				$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price));
 			});	
 		}
 
@@ -64,13 +64,19 @@ $(document).on('page:change',function(){
 			$('.js-append-books').empty();
 			var action = $(this).val();
 			response.books[action].forEach(function(item){
-				$('.js-append-books').append(bookToHTML(item.title,item.author,item.cover,item.price));
+				if(action == 'bought') {
+					$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price,'Reswap!'));
+				}else{
+					$('.js-append-books').append(bookToHTML(item.id,item.title,item.author,item.cover,item.price));
+				}
+				
 			});	
 			setMasonryLayout();
 		});
 	}
 
-	function bookToHTML(title,author,cover,price){
+	function bookToHTML(id,title,author,cover,price,action){
+		action = action || "";
 		return '<div class="book">'+
 					'<div class="front">'+
 						'<section class="book-box">'+
@@ -82,10 +88,20 @@ $(document).on('page:change',function(){
 								'<p class="book-author">'+author+'</p>'+
 							'</article>'+
 							'<article>'+
-								'<p  class="book-more-info"></p>'+
+								'<p class="book-more-info">'+
+									createActionLink(id,action) + 
+								'</p>'+
 							'</article>'+
 						'</section>'+
 					'</div>'+
 				'</div>';
+	}
+
+	function createActionLink(id,action){
+		if(action != ""){
+			return "<a href='/books/"+id+"/reswap'>"+action+"</a>";
+		}else{
+			return "";
+		}
 	}
 });
