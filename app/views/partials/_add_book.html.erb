@@ -9,7 +9,11 @@
 	      <h3 class="new-book-heading"></h3>
 	      	<section class="js-new-book-form">
 	      		<%= simple_form_for books_create_path do |f| %>
-	      		<%= image_tag("", class: "cover") %>
+	      		<div class="cover">
+	      			<%= image_tag("", class: "cover") %>
+	      			<%= f.label 'Upload your own book cover' %>
+	      			<%= f.file_field :custom_cover %>
+	      		</div>
 	      		<div class="book-data">
 		      		<div class="input-group">
 		      			<%= f.input_field :title, disabled: true, class: "title", placeholder: 'Título' %>
