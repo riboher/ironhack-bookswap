@@ -14,7 +14,7 @@ $(document).on('page:change',function(){
 	function showLogForm(method){
 		$('.js-' + method + '-form').find('#modal-1').prop('checked',true);
 	}
-	//FORM EDITION
+	//FORMS EDITION
 	$('.edit-button').on('click',function(event){
 		event.preventDefault();
 		var attribute = $(this).data('edit');

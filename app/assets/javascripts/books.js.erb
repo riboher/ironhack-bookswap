@@ -106,11 +106,16 @@ $(document).on('page:change',function(){
 		});
 	}
 
+	function formatAuthor(author){
+		var name = author.split(/[,;]/);
+		return name[1] + " " + name[0];
+	}
+
 	function parseXML(xml){
 		var error = document.getElementsByTagName('error');
 		if(error.length == 0){
 			var title = $(xml).find('title').text();
-			var author = $(xml).find('author').text();
+			var author = formatAuthor($(xml).find('author').text());
 			var year = $(xml).find('publicationdate').text();
 			var isbn = $(xml).find('ean').text();
 			var cover = $(xml).find('imageurl').text();
@@ -146,7 +151,7 @@ $(document).on('page:change',function(){
 		form.find('.author').val(author);
 		form.find('.publisher').val(publisher);
 		form.find('.year').val(year);
-		form.find('.price').val(totalPrice + ' puntos');
+		form.find('.price').val(totalPrice);
 		form.find('.isbn').val(isbn);
 	}
 
