@@ -92,7 +92,7 @@ $(document).on('page:change',function(){
 		return ISBNregexp.test(code);
 	}
 
-	var ENDPOINT = "http://www.directtextbook.com/xml.php?key=4cf4a7b1a265e7a0710c24a1d4d72df4&isbn=";
+	var ENDPOINT = "/api/v1/books/search/";
 	
 	function getBook(isbn){
 		$.ajax({
