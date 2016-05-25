@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry-rails'
 
 RSpec.describe Transaction, type: :model do
 

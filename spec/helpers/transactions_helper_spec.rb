@@ -1,15 +1,13 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the TransactionsHelper. For example:
-#
-# describe TransactionsHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe TransactionsHelper, type: :helper do
-  # pending "add some examples to (or delete) #{__FILE__}"
+  describe 'get bookswap count' do
+    it 'returns the number of books that a user has bookswapped' do
+      buyer = create(:reader)
+      seller = create(:reader)
+      book = create(:book, reader: buyer)
+      Transaction.make_transaction(book,buyer,seller)
+      expect(get_bookswap_count(buyer)). to eq 1
+    end
+  end
 end
