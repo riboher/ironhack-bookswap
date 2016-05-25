@@ -4,11 +4,11 @@ class Transaction < ActiveRecord::Base
   belongs_to :book
 
   def self.get_buyer_books(reader)
-   Book.where(is_available: false).joins(:transactions).where("buyer_id = ?",reader.id).order('transactions.created_at desc')
+   Book.joins(:transactions).where("buyer_id = ? AND books.is_available = ?",reader.id,false).order('transactions.created_at desc')
   end
 
   def self.get_seller_books(reader)
-    Book.where(is_available: false).joins(:transactions).where("seller_id = ?",reader.id).order('transactions.created_at desc')
+    Book.joins(:transactions).where("seller_id = ? AND books.is_available = ?",reader.id,false).order('transactions.created_at desc')
   end
 
   def self.credit_update(book,buyer,seller)
