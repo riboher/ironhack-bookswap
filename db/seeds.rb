@@ -1,11 +1,3 @@
-Reader.create(first_name: 'Ricardo',
-            last_name: 'Boluda',
-            email: 'riboher@gmail.com',
-            city: 'Madrid',
-            postcode: '28006',
-            password: '123456',
-            avatar: 'https://robohash.org/profile.png?size=150x150&set=set3')
-
 Reader.create(first_name: 'Jose',
             last_name: 'Perez',
             email: 'josepe@hotmail.com',
@@ -23,7 +15,7 @@ Book.create(title: "El Nino con el Pijama de Rayas (Spanish Edition)",
             cover: "http://www.directtextbook.com/large/8498380790.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
             is_available: false,
-            reader_id: 2)
+            reader_id: 1)
 
 Book.create(title: "Lucky star las lunas de jupiter",
             author: "Asimov, Isaac",
@@ -58,7 +50,7 @@ Book.create(title: "Los Relatos 4 (Spanish Edition)",
             isbn: "9788420601281",
             cover: "http://www.directtextbook.com/large/9788420601281.jpg",
             description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            reader_id: 2
+            reader_id: 1
             )
 
 Book.create(title: "La casa de los espíritus",
@@ -69,7 +61,7 @@ Book.create(title: "La casa de los espíritus",
             isbn: "9788447306619",
             cover: "http://www.directtextbook.com/large/8447306615.jpg",
             description: "Maxime assumenda sapiente numquam mollitia autem explicabo nulla quos.",
-            reader_id: 2,
+            reader_id: 1,
             is_available: false
             )
 
@@ -84,9 +76,5 @@ Book.create(title: "El Guardian Entre el Centeno (Spanish Edition)",
             Assumenda sapiente numquam mollitia autem explicabo nulla quos.",
             reader_id: 1
             )
-
-Transaction.create(book_id: 1, buyer_id: 2, seller_id: 1)
-Transaction.create(book_id: 3, buyer_id: 1, seller_id: 2)
-Transaction.create(book_id: 5, buyer_id: 2, seller_id: 1)
 
 puts "All info saved successfully"
