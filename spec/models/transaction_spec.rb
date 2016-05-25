@@ -10,15 +10,11 @@ RSpec.describe Transaction, type: :model do
   describe '#get books from buyer' do
     before do
       @book1 = create(:book, reader: buyer, price: 5, is_available: false)
-      @book2 = create(:book, reader: buyer, price: 5, is_available: false)
-      @book3 = create(:book, reader: seller, price: 5, is_available: false)
       Transaction.create(book: @book1, buyer: buyer, seller: seller, created_at: Date.today.last_week)
-      Transaction.create(book: @book2, buyer: buyer, seller: seller, created_at: Date.today.last_month)
-      Transaction.create(book: @book3, seller: buyer, buyer: seller, created_at: Date.today.yesterday)
     end
 
     it 'returns all the books for a specific buyer' do
-      expect(Transaction.get_buyer_books(buyer).length).to eq(2)
+      expect(Transaction.get_buyer_books(buyer).length).to eq(1)
     end
 
     it 'should return the books ordered by the transactions creation' do
@@ -28,12 +24,8 @@ RSpec.describe Transaction, type: :model do
 
   describe '#get books from seller' do
     before do
-      book1 = create(:book, reader: buyer, is_available: false)
-      book2 = create(:book, reader: buyer, is_available: false)
-      book3 = create(:book, reader: seller, is_available: false)
-      Transaction.create(book: book1, buyer: buyer, created_at: Date.today.last_week)
-      Transaction.create(book: book2, buyer: buyer,created_at: Date.today.last_month)
-      Transaction.create(book: book3, buyer: buyer, seller: seller, created_at: Date.today.yesterday)
+      book1 = create(:book, reader: seller, is_available: false)
+      Transaction.create(book: book1, buyer: buyer, seller: seller, created_at: Date.today.yesterday)
     end
 
     it 'returns all the books for a specific seller' do
