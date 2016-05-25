@@ -11,3 +11,16 @@
 		margin-top: 0;
 	}
 }
+
+.title {
+	@include outer-container;
+	h3 {
+		@include span-columns(12);
+	}
+	article {
+		@include span-columns(4);
+		&:not(:last-child) {
+			border-right: 2px solid $green;
+		}
+	}
+}

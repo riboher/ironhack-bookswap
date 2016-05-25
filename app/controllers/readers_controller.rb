@@ -27,7 +27,7 @@ class ReadersController < ApplicationController
 
   def my_books
     @reader = Reader.find_by(id: params[:id])
-    if @reader
+    if @reader.present?
       @books_on_sale = Book.get_books_from(@reader)
       @books_sold = Transaction.get_seller_books(@reader)
       @books_acquired = Transaction.get_buyer_books(@reader)

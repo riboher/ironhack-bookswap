@@ -1,6 +1,7 @@
 <section class="hero-unit">
   <div class="row-top">
     <h1>BookSwap</h1>
+    <h2>Si no vas a volver a leer ese libro, cámbialo! </h2>
     <form class="search-bar" role="search" id="typeahead-search-form">
       <button type="submit"></button>
       <input type="search" placeholder="p.ej. 'El Quijote'" name="book" id="books" />
@@ -8,15 +9,37 @@
   </div>
   <div class="overlay"></div>
 </section>
-<div class="title">
-  <% if reader_signed_in? %>
-    <h1>Empieza a buscar libros en Bookswap</h1>
-    <h3>Haz click para obtener más información</h3>
-  <% else %>
-    <h1>Estos son los libros disponibles en Bookswap</h1>
-    <h3>Accede al site y registra los libros que tengas</h3>
-  <% end %>
-</div>
+<% if !reader_signed_in? %>
+<section class="steps">
+  <div class="title">
+      <h3>Así funciona BookSwap:</h3>
+      <article>
+        <div class="tooltip-item">
+          <span>1</span>
+          <div class="tooltip">
+            <p>Regístrate y empieza a subir libros. Solo necesitas el ISBN, nosotros nos encargamos del restro.</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="tooltip-item">
+          <span>2</span>
+          <div class="tooltip">
+            <p>Por cada libro te daremos cierta cantidad de puntos. Los recibirás cuando alguien se interese por tu libro.</p>
+          </div>
+        </div>
+      </article>
+      <article>
+        <div class="tooltip-item">
+          <span>3</span>
+          <div class="tooltip">
+            <p>Usa los puntos para coger libros de otros usuarios!</p>
+          </div>
+        </div>
+      </article>
+  </div>
+</section>
+<% end %>
 <div class="row js-access-buttons">
 	<%= render partial: 'partials/book', collection: @selling_books, as: :book %>
 </div>

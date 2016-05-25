@@ -32,15 +32,16 @@ form.search-bar input.search-isbn[type="search"] {
     background-size: cover;
 	height: 350px;
 	position: relative;
+	margin-bottom: 30px;
 	.row-top {
 		@include vertical-align();
 		text-align: center;
-		color: $green;
+		color: #fff;
 		z-index: 2;
 	}
 
 	.overlay {
-		background: rgba(255,255,255,0.45);
+		background: rgba(0,0,0,0.5);
 	    position: absolute;
 	    height: 100%;
 	    width: 100%;
@@ -49,36 +50,40 @@ form.search-bar input.search-isbn[type="search"] {
 	}
 
 	h1 {
-		// font-family: 'Circular';
 		font-size: 4em;
 		margin-bottom: 0.2em;
 	}
+	h2 {
+		font-size: 1.5em;
+	}
 }
 
-.title {
-	text-align: center;
-	color: $green;
-	padding: 35px 0 30px;
-	margin-bottom: 30px;
-	margin-top: 0;
+.steps {
 	background-color: #DCE1DE;
-	h1 {
-		font-size: 2em;
-	}
-	h3 {
-		font-size: .8em;
+	.title {
+		text-align: center;
+		color: $green;
+		padding: 20px 0 15px;
+		margin-bottom: 15px;
+		margin-top: 0;
+		h3,article {
+			font-size: 1.4em;
+		}
+		.tooltip {
+			cursor: pointer;
+		}
 	}
 }
+
 
 #typeahead-search-form {
 	input[type="search"] {
-		background: none;
+		background: rgba(255,255,255,.9);
 		border: 0;
-		border-bottom: 3px solid $green;
+		border: 2px solid $green;
 		box-shadow: none;
 		width: 790px;
-		padding-left: 50px;
-		padding-bottom: 2px;
+		padding: .18em .5em .18em 50px;
 		font-size: 28px;
 		color: $green;
 		&:focus {
@@ -89,6 +94,7 @@ form.search-bar input.search-isbn[type="search"] {
 	button {
 		left: 0;
 		background: none;
+		z-index: 99999;
 		&:before {
 			font-family: fontAwesome;
 			content: "\f002";
@@ -130,6 +136,7 @@ form.search-bar input.search-isbn[type="search"] {
 }
 
 .book {
+	cursor: pointer;
 	margin: 0 auto;
 	backface-visibility: hidden;
 	.back {
