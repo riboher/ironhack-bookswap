@@ -52,7 +52,7 @@ $(document).on('page:change',function(){
 
 	function getBooks(response){
 		if(response.books['on_sale'].length == 0){
-			$('.banner').toggleClass('hidden');
+			$('.banner').removeClass('hidden');
 		}else{
 			response.books['on_sale'].forEach(function(item){
 				$('.js-append-books').append(bookToHTML(item.book.book_details.id,
@@ -68,8 +68,12 @@ $(document).on('page:change',function(){
 		filters.on('click',function(){
 			$('.js-append-books').empty();
 			var action = $(this).val();
+			if (action == 'on_sale' && response.books['on_sale'].length == 0){
+				$('.banner').removeClass('hidden');
+			}else{
+				$('.banner').addClass('hidden');
+			}
 			response.books[action].forEach(function(item){
-				console.log(item.book.avatar_path)
 				if(action == 'bought') {
 					$('.js-append-books').append(bookToHTML(item.book.book_details.id,
 														item.book.book_details.title,
@@ -78,7 +82,7 @@ $(document).on('page:change',function(){
 														item.book.book_details.price,
 														item.book.avatar_path,
 														'Reswap!'));
-				}else{
+				}else {
 					$('.js-append-books').append(bookToHTML(item.book.book_details.id,
 														item.book.book_details.title,
 														item.book.book_details.author,
@@ -94,7 +98,7 @@ $(document).on('page:change',function(){
 
 	function bookToHTML(id,title,author,cover,price,avatar,action){
 		action = action || "";
-		return '<div class="book">'+
+		return '<div class="book" id="'+ id +'">'+
 					'<div class="front">'+
 						'<section class="book-box">'+
 							'<article class="book-thumbnail">'+
