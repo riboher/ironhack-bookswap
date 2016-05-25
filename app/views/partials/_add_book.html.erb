@@ -12,38 +12,35 @@
 	      		<div class="cover">
 	      			<%= image_tag("", class: 'cover-default') %>
 	      			<%= f.hidden_field :cover, class: 'cover-hidden' %>
-	      			<%= f.label 'Upload your own book cover' %>
+	      			<%= f.label 'Sube tu propia portada' %>
 	      			<%= f.input :avatar, as: :file, class: 'custom-cover' %>
 	      		</div>
 	      		<div class="book-data">
 		      		<div class="input-group">
 		      			<%= f.input_field :title, class: "title", placeholder: 'Título' %>
-		      			<button class="edit-button" data-edit="title">Editar</button>
 		      		</div>
 		      		<div class="input-group">
 		      			<%= f.input_field :author, class: "author", placeholder: 'Autor' %>
-		      			<button class="edit-button" data-edit="author">Editar</button>
 		      		</div>
 		      		<div class="input-group">
 		      			<%= f.input_field :publisher, class: "publisher", placeholder: 'Editorial' %>
-		      			<button class="edit-button" data-edit="publisher">Editar</button>
 		      		</div>
 		      		<div class="input-group">
 		      			<%= f.input_field :year, class: "year", placeholder: 'Año de publicación' %>
-		      			<button class="edit-button" data-edit="year">Editar</button>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.label "Te damos:"  %>
-		      			<%= f.input_field :price, class: "price", as: :string %>
+		      			<%= f.label "Puntos obtenidos:"  %>
+		      			<%= f.input_field :price, class: "price", as: :string, disabled: true %>
 		      		</div>
 		      		<div class="input-group">
 		      			<%= f.label "A la gente le encanta una buena descripción:" %>
 		      			<%= f.text_field :description, class: "description" %>
 		      		</div>
 		      		<div class="input-group">
-		      			<%= f.submit "Add book to collection" %>
+		      			<%= f.submit "Añadir libro a mi colección" %>
 		      		</div>
 		      			<%= f.hidden_field :isbn, class: "isbn" %>
+		      			<%= f.hidden_field :price, class: "price" %>
 	      		</div>
 	      		<% end %>
 	      	</section>
