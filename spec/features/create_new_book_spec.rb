@@ -15,8 +15,8 @@ feature 'book creation from ISBN', :js => true do
       fill_in 'isbn', :with => '9781844137879'
       find('.isbn-submit').click
     end
-    sleep 15
-    expect(page).to have_content('Title')
+    sleep 5
+    expect(page).to have_content('Avatar')
   end
 end
 Warden.test_reset!
