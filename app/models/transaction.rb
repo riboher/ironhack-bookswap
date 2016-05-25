@@ -4,7 +4,7 @@ class Transaction < ActiveRecord::Base
   belongs_to :book
 
   def self.get_buyer_books(reader)
-   Book.joins(:transactions).where("buyer_id = ? AND books.is_available = ?",reader.id,false).order('transactions.created_at desc')
+    Book.joins(:transactions).where("buyer_id = ? AND books.is_available = ?",reader.id,false).order('transactions.created_at desc')
   end
 
   def self.get_seller_books(reader)
