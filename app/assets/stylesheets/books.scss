@@ -55,6 +55,7 @@ form.search-bar input.search-isbn[type="search"] {
 	}
 	h2 {
 		font-size: 1.5em;
+		margin-bottom: 32px;
 	}
 }
 
@@ -83,8 +84,8 @@ form.search-bar input.search-isbn[type="search"] {
 		border: 2px solid $green;
 		box-shadow: none;
 		width: 790px;
-		padding: .18em .5em .18em 50px;
-		font-size: 28px;
+		padding: .2em .5em .2em 50px;
+		font-size: 19px;
 		color: $green;
 		&:focus {
 			outline: 0;
