@@ -39,7 +39,7 @@ $(document).on('page:change',function(){
 	//USER BOOKS FILTERING
 
 	if(window.location.href.indexOf("readers") > -1) {
-       retrieveAllBooks();
+       	retrieveAllBooks();
     }
 
 	function retrieveAllBooks(){
@@ -55,7 +55,6 @@ $(document).on('page:change',function(){
 	}
 
 	function getBooks(response){
-		setMasonryLayout();
 		if(response.books['on_sale'].length == 0){
 			$('.banner').removeClass('hidden');
 		}else{
@@ -101,6 +100,7 @@ $(document).on('page:change',function(){
 	}
 
 	function bookToHTML(id,title,author,cover,price,avatar,action){
+		setMasonryLayout();
 		action = action || "";
 		return '<div class="book" id="'+ id +'">'+
 					'<div class="front">'+
