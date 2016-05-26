@@ -28,6 +28,10 @@ $(document).on('page:change',function(){
 		}
 	});
 	
+	setTimeout(function(){
+		$('.flash-notice, .flash-container').css('display','none');
+	},2500);
+
 	$('#js-close-purchase').on('click',function(){
 		$('.flash-notice').remove();
 	});
