@@ -20,9 +20,13 @@ gem 'figaro'
 
 group :development, :test do
   gem 'byebug'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'capybara'
   gem 'faker'
   gem 'warden'
   gem 'guard-rspec'
