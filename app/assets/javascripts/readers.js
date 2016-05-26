@@ -55,6 +55,7 @@ $(document).on('page:change',function(){
 	}
 
 	function getBooks(response){
+		setMasonryLayout();
 		if(response.books['on_sale'].length == 0){
 			$('.banner').removeClass('hidden');
 		}else{
@@ -96,7 +97,6 @@ $(document).on('page:change',function(){
 				}
 				
 			});	
-			setMasonryLayout();
 		});
 	}
 
