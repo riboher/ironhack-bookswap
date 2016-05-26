@@ -7,9 +7,9 @@ class ReaderMailer < ApplicationMailer
       Alguien ha hecho Swap a tu libro #{@book.title}""")
   end
 
-  def confirmation_swap_mail(book,current_reader)
+  def confirmation_swap_mail(book,buyer)
     @book = book
-    @reader = current_reader
+    @reader = buyer
     mail(to: @reader.email, subject: """Hola #{@reader.first_name}!
       Has hecho Swap a  #{@book.title}""")
   end
