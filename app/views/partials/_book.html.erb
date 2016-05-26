@@ -29,7 +29,7 @@
 				</article>
 				<article class="swap-book">
 					<%= button_to swap_book_path(book.id), disabled: compare_credit(book.price,current_reader.credit) do %>
-					  <span class="swap">Swap it!</span>
+					  <span class="swap">Cámbialo!</span>
 					<% end %>
 					<h6><%= book.price %> points</h6>
 				</article>
