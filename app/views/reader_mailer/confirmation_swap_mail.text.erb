@@ -1,0 +1,12 @@
+BookSwap
+Hola <%= @reader.first_name %>
+-------------------------------------
+
+Has hecho Bookswap en el siguiente libro:
+
+<%= @book.title %>
+<%= @book.author %>
+<% if @book.description != "" %>
+	<%= @book.description%>
+<% end %>
+Tus créditos después de este Swap: <%= @reader.credit %>
