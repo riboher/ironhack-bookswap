@@ -18,6 +18,7 @@
 		<%= simple_form_for current_reader do |f| %>
 			<div class="avatar-status">
 				<%= image_tag(current_reader.avatar) %>
+				<%= f.input :avatar, as: :file, class: 'custom-cover', label: 'Foto de perfil' %>
 			</div>
 			<div class="input-edits">
 				<div class="input-group">

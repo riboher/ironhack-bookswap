@@ -40,7 +40,7 @@ class ReadersController < ApplicationController
   private
   def reader_params
     if params[:reader]
-      params.require(:reader).permit(:first_name, :last_name, :email, :address, :postcode, :city)
+      params.require(:reader).permit(:first_name, :last_name, :email, :address, :postcode, :city, :avatar)
     end
   end
 end
