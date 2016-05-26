@@ -8,11 +8,10 @@
 		<li>
 			<button class="log" data-session="login">Acceder</button>
 		</li>
-	<% end %>
+	<% else %>
 	<li>
 		<%= link_to 'Ver libros', root_path, class: 'browsing' %>
 	</li>
-	<% if reader_signed_in? %>
 	<li class="add-book-menu">
 		<label for="modal-isbn">
 			<a class="modal-trigger">Nuevo libro</a>
